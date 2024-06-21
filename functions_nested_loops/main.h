@@ -9,4 +9,10 @@ void print_alphabet(void);
 
 void print_alphabet_x10(void);
 	/** Fonction utilitaire servant à imprimer l'alphabet en minuscule 10 fois */
+int _islower(int c);
+	/**
+	 * Fonction utilitaire servant à vérifier les minuscules
+	 * si minuscules return 1
+	 * sinon 0
+	 */
 #endif

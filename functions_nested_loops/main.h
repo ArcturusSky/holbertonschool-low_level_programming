@@ -34,4 +34,7 @@ int print_sign(int n);
 int _abs(int);
 	/** Fonction utilitaire servant à computer les valeurs absolues en int */
 
+int print_last_digit(int);
+	/** Fonction utilitaire servant print le dernier digit */
+
 #endif

@@ -21,4 +21,10 @@ int _isalpha(int c);
 	 * si caractère alphanumerique return 1
 	 * sinon 0
 	 */
+int print_sign(int n);
+	/**
+	 * Fonction utilitaire servant à print le signe d'un nombre
+	 * si positif return 1, si 0 return 0, si negatif return -1
+	 * sinon 0
+	 */
 #endif

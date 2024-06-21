@@ -1,27 +1,37 @@
 #include "main.h"
 
 /**
-* main - check the code.
-*
-* Return: Always 0.
-*/
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int r;
+    int r;
 
-	r = _isalpha('H');
+    r = print_sign(98);
 
-	_putchar(r + '0');
+    _putchar(',');
+    _putchar(' ');
+    _putchar(r + '0');
+    _putchar('\n');
 
-	r = _isalpha('o');
+    r = print_sign(0);
+    _putchar(',');
+    _putchar(' ');
+    _putchar(r + '0');
+    _putchar('\n');
 
-	_putchar(r + '0');
-	r = _isalpha(108);
+    r = print_sign(0xff);
+    _putchar(',');
+    _putchar(' ');
+    _putchar(r + '0');
+    _putchar('\n');
 
-	_putchar(r + '0');
-	r = _isalpha(';');
-
-	_putchar(r + '0');
-	_putchar('\n');
-	return (0);
+    r = print_sign(-1);
+    _putchar(',');
+    _putchar(' ');
+    _putchar(r + '0');
+    _putchar('\n');
+    return (0);
 }

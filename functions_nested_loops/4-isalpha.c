@@ -14,6 +14,10 @@ int _isalpha(int c)
 		}
 		else if (c >= 97 && c <= 122) /** 97 en ASCII = a et 122 = z*/
 		{
-			return (0);
+			return (1);
 			}
+		else
+		{
+			return (0);
+		}
 }

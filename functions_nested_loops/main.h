@@ -15,4 +15,10 @@ int _islower(int c);
 	 * si minuscules return 1
 	 * sinon 0
 	 */
+int _isalpha(int c);
+	/**
+	 * Fonction utilitaire servant à vérifier les caractères
+	 * si caractère alphanumerique return 1
+	 * sinon 0
+	 */
 #endif

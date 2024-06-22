@@ -7,41 +7,31 @@
 
 void times_table(void)
 {
-	int findetable, multiplicateur;
+	int ligne, colonne, resultat;
 
-	for (findetable = 0; findetable < 10; findetable++)
+	for (ligne = 0; ligne <= 9; ligne++)
 	{
-		for (multiplicateur = 0; multiplicateur < 10; multiplicateur++)
+		for (colonne = 0; colonne <= 9; colonne++)
 		{
-			_putchar((0 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar('.');
-			_putchar((1 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar('.');
-			_putchar((2 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar('.');
-			_putchar((3 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar(' ');
-			_putchar((4 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar(' ');
-			_putchar((5 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar(' ');
-			_putchar((6 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar(' ');
-			_putchar((7 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar(' ');
-			_putchar((8 * multiplicateur) + '0');
-			_putchar(',');
-			_putchar(' ');
-			_putchar((9 * multiplicateur) + '0');
-			_putchar('\n');
+			resultat = (ligne * colonne);
+			if (colonne != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
 			}
+			if (resultat >= 10)
+			{
+				_putchar((resultat / 10) + '0');
+				_putchar((resultat % 10) + '0');
+			}
+			else if (resultat < 10 && colonne != 0)
+			{
+				_putchar(' ');
+				_putchar((resultat % 10) + '0');
+			}
+			else
+				_putchar((resultat % 10) + '0');
+		}
+			_putchar('\n');
 	}
 }

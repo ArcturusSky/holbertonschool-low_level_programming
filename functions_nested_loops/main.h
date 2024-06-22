@@ -37,4 +37,11 @@ int _abs(int);
 int print_last_digit(int);
 	/** Fonction utilitaire servant print le dernier digit */
 
+int add(int, int);
+	/**
+	* add - Fonction utilitaire pour additioner deux entiers
+	* Return: the sum
+	*
+	*/
+
 #endif

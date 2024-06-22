@@ -37,11 +37,19 @@ int _abs(int);
 int print_last_digit(int);
 	/** Fonction utilitaire servant print le dernier digit */
 
+void jack_bauer(void);
+	/** Fonction utilitaire permettant chaque lin de la journée de Jack Bauer */
+
+void times_table(void);
+	/** Fonction uti permettant de print la "9 times table" commençant par 0 */
+
 int add(int, int);
 	/**
 	* add - Fonction utilitaire pour additioner deux entiers
 	* Return: the sum
 	*
 	*/
+void print_to_98(int n);
+	/** Fonction uti pour print tous les nbs naturels de n à 98, suivi d'un \n */
 
 #endif

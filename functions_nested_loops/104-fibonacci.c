@@ -7,7 +7,7 @@
 
 int main(void)
 {
-int a, b, c, compteur;
+unsigned long a, b, c, compteur;
 
 a = 1;
 b = 2;
@@ -16,7 +16,7 @@ compteur = 0;
 
 while (compteur != 97)
 {
-	printf("%d, ", c);
+	printf("%lu, ", c);
 	a = b;
 	b = c;
 	c = (b + a);
@@ -24,7 +24,7 @@ while (compteur != 97)
 }
 if (compteur == 97)
 {
-	printf("%d", c);
+	printf("%lu", c);
 	a = b;
 	b = c;
 	c = (b + a);

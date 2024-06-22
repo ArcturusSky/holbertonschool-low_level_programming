@@ -14,13 +14,21 @@ b = 2;
 c = (a + b);
 compteur = 0;
 
-while (compteur != 98)
+while (compteur != 97)
 {
-	printf("%d ,", c);
+	printf("%d, ", c);
 	a = b;
 	b = c;
 	c = (b + a);
 	compteur++;
 }
+if (compteur == 97)
+{
+	printf("%d", c);
+	a = b;
+	b = c;
+	c = (b + a);
+	compteur++;
 	printf("\n");
+}
 }

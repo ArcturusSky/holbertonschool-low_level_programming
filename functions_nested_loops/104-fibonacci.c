@@ -14,6 +14,7 @@ b = 2;
 c = (a + b);
 compteur = 0;
 
+printf("%lu, %lu, ", a, b);
 while (compteur != 97)
 {
 	printf("%lu, ", c);

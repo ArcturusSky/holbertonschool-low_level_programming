@@ -15,22 +15,18 @@ c = (a + b);
 compteur = 2;
 
 printf("%lu, %lu, ", a, b);
-while (compteur != 97)
-{
-	printf("%lu, ", c);
-	a = b;
-	b = c;
-	c = (b + a);
-	compteur++;
-}
-if (compteur == 97)
+while (compteur < 98)
 {
 	printf("%lu", c);
 	a = b;
 	b = c;
 	c = (b + a);
 	compteur++;
-	printf("\n");
 }
+if (compteur < 98)
+{
+	printf(", ");
+	}
+printf("\n");
 return (0);
 }

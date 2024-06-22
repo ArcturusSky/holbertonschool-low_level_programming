@@ -22,11 +22,12 @@ while (compteur < 98)
 	b = c;
 	c = (b + a);
 	compteur++;
-}
-if (compteur < 98)
-{
-	printf(", ");
+
+	if (compteur < 98)
+	{
+		printf(", ");
 	}
+}
 printf("\n");
 return (0);
 }

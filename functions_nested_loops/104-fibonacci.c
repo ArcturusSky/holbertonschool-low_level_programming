@@ -15,7 +15,7 @@ c = (a + b);
 compteur = 0;
 
 printf("%lu, %lu, ", a, b);
-while (compteur != 96)
+while (compteur != 95)
 {
 	printf("%lu, ", c);
 	a = b;
@@ -23,7 +23,7 @@ while (compteur != 96)
 	c = (b + a);
 	compteur++;
 }
-if (compteur == 96)
+if (compteur == 95)
 {
 	printf("%lu", c);
 	a = b;

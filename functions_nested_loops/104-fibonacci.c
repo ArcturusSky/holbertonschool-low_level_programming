@@ -31,4 +31,5 @@ if (compteur == 97)
 	compteur++;
 	printf("\n");
 }
+return (0);
 }

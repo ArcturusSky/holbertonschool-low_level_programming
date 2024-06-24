@@ -8,4 +8,10 @@ int _isupper(int c);
 	 * sinon 0
 	 */
 
+int _isdigit(int c);
+	/**
+	 * Fonction utilitaire servant à vérifier les chiffres
+	 * si chiffres return 1
+	 * sinon 0
+	 */
 #endif

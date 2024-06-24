@@ -12,7 +12,7 @@ void print_square(int size)
 	int keepsize;
 
 	keepsize = size;
-for (loop = 1; loop <= size; loop++)
+for (loop = 0; loop < size; loop++)
 {
 	while (size > 0)
 	{

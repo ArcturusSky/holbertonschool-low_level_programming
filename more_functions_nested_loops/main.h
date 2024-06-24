@@ -27,4 +27,7 @@ int mul(int, int);
 void print_numbers(void);
 	/** Fonction utilitaire servant à imprimer les chiffres de 0 à 9 */
 
+void print_most_numbers(void);
+	/** Fonction utilitaire servant à imprimer les chiffres sans 2 et 4 */
+
 #endif

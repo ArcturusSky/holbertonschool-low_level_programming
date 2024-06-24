@@ -38,7 +38,7 @@ int print_last_digit(int);
 	/** Fonction utilitaire servant print le dernier digit */
 
 void jack_bauer(void);
-	/** Fonction utilitaire permettant chaque lin de la journée de Jack Bauer */
+	/** Fonction utilitaire permettant chaque min de la journée de Jack Bauer */
 
 void times_table(void);
 	/** Fonction uti permettant de print la "9 times table" commençant par 0 */

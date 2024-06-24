@@ -14,4 +14,10 @@ int _isdigit(int c);
 	 * si chiffres return 1
 	 * sinon 0
 	 */
+
+int mul(int, int);
+	/**
+	* mul - Fonction utilitaire pour multiplier deux entiers
+	* Return: the result
+	*/
 #endif

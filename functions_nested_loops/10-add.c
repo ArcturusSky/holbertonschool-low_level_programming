@@ -2,7 +2,7 @@
 
 /**
  * add - Fonction utilitaire pour a
- * dditioner deux entiers
+ * additioner deux entiers
  * @a: premier nombre à additionner
  * @b: deuxième nombre à additionner
  * Return: the sum

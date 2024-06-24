@@ -28,6 +28,20 @@ void print_numbers(void);
 	/** Fonction utilitaire servant à imprimer les chiffres de 0 à 9 */
 
 void print_most_numbers(void);
-	/** Fonction utilitaire servant à imprimer les chiffres sans 2 et 4 */
+	/** Fonction utilitaire servant à print les chiffres de 0 à 9 sans 2 et 4 */
 
+void more_numbers(void);
+	/** Fonction utilitaire servant à imprimer les chiffres de 0 à 14 fois 10*/
+
+void print_line(int n);
+	/** Fonction utilitaire permettant de dessiner une ligne droite */
+
+void print_diagonal(int n);
+	/** Fonction utilitaire permettant de dessiner une ligne diagonale */
+
+void print_square(int size);
+	/** Fonction utilitaire permettant de dessiner un carré */
+
+void print_triangle(int size);
+	/** fonction utilitaire permettant de dessiner un triangle */
 #endif

@@ -9,7 +9,7 @@ int main(void)
 {
 	int nombre;
 
-		for (nombre = 1; nombre <= 100; nombre++)
+		for (nombre = 1; nombre <= 99; nombre++)
 		{
 			if (nombre % 3 == 0 && nombre % 5 == 0)
 			{
@@ -23,14 +23,10 @@ int main(void)
 			{
 				printf("Buzz ");
 			}
-			else if (nombre == 100)
-			{
-				printf("Buzz");
-			}
 			else
 			printf("%d ", nombre);
 		}
 
-		putchar('\n');
+		printf("Buzz\n");
 return (0);
 }

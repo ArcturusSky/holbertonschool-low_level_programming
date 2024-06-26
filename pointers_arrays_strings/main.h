@@ -91,6 +91,8 @@ void print_square(int size);
 	/** Fonction utilitaire permettant de dessiner un carré */
 
 void print_triangle(int size);
-	/** fonction utilitaire permettant de dessiner un triangle */
+	/** Fonction utilitaire permettant de dessiner un triangle */
 
+void reset_to_98(int *n);
+	/** Fonction utilitaire permettant d'update la valeur pointée à 98 */
 #endif

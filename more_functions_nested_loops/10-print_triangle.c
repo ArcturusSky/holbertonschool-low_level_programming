@@ -21,19 +21,19 @@ void print_triangle(int n)
 		_putchar ('\n');
 	}
 
-	for (ligne = 0; ligne != n; ligne++)
-	{
-		hashtag = 0;
-		for (espace = n - minus; espace != 0; espace--)
+		for (ligne = 0; ligne < n; ligne++)
 		{
-			_putchar(' ');
+			hashtag = 0;
+			for (espace = n - minus; espace != 0; espace--)
+			{
+				_putchar(' ');
+			}
+			while (hashtag != minus)
+			{
+				_putchar(35);
+				hashtag++;
+			}
+			minus++;
+			_putchar('\n');
 		}
-		while (hashtag != minus)
-		{
-			_putchar(35);
-			hashtag++;
-		}
-		minus++;
-		_putchar('\n');
-	}
 }

@@ -36,5 +36,4 @@ void print_triangle(int n)
 		minus++;
 		_putchar('\n');
 	}
-	_putchar(2);
 }

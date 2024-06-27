@@ -99,6 +99,11 @@ void reset_to_98(int *n);
 
 void swap_int(int *a, int *b);
 	/** Fonction utilitaire permettant de swap la valeur de deux entiers */
+
 int _strlen(char *s);
-	/** Fonction retournan la taille d'un string */
+	/** Fonction utilitaire retournant la taille d'un string */
+
+void _puts(char *str);
+	/** Fonction utilitaire permettant de print le string */
+
 #endif

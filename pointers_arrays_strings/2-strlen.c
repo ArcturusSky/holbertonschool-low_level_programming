@@ -13,6 +13,12 @@ int _strlen(char *s)
 	count = 0;
 
 	while (*s != '\0')
+
+	/**
+	 * Permet de traverser le array vers lequel point s
+	 * "*s" désigne littéralement ce tableau je n'ai pas besoinde
+	 * de son adresse mémoire avec p = &s ou autre.
+	 */
 	{
 		count++;
 		s++;

@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdio.h>
 
 int _putchar(char c);
 	/**Fonction utilitaire servant à remplacer putchar classique */
@@ -95,4 +96,7 @@ void print_triangle(int size);
 
 void reset_to_98(int *n);
 	/** Fonction utilitaire permettant d'update la valeur pointée à 98 */
+
+void swap_int(int *a, int *b);
+	/** Fonction utilitaire permettant de swap la valeur de deux entiers */
 #endif

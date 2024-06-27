@@ -106,4 +106,7 @@ int _strlen(char *s);
 void _puts(char *str);
 	/** Fonction utilitaire permettant de print le string */
 
+void print_rev(char *s);
+	/** Fonction utilitaire permettant d'imprimer le string à l'envers */
+
 #endif

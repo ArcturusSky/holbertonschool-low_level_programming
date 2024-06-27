@@ -8,7 +8,7 @@
 
 void print_rev(char *s)
 	{
-		char count_for_reverse;
+		long int count_for_reverse;
 
 		count_for_reverse = 0;
 

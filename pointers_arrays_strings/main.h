@@ -109,4 +109,13 @@ void _puts(char *str);
 void print_rev(char *s);
 	/** Fonction utilitaire permettant d'imprimer le string à l'envers */
 
+void rev_string(char *s);
+	/** Fonction uti permettant d'obtenir une string inversée (pas de la print)*/
+
+void puts2(char *str);
+	/**
+	 * Fonction utilitaire permettant d'imprimer 2 char sur 2 dans une string
+	 * (exemple : "HelloWorld" devient "Hlood")
+	 */
+
 #endif

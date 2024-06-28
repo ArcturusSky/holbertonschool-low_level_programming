@@ -1,23 +1,17 @@
 #include "main.h"
 
 /**
- * _puts - Fonction permettant de print un str
+ * puts2 - Fonction permettant de print une 2 lettres sur 2
  * @str: string print
  * Return: rien
  */
 
-void _puts(char *str)
+void puts2(char *str)
 	{
 		while (*str != '\0')
-
-		/**
-		 * Permet de traverser le array vers lequel point s
-		 * "*str" désigne littéralement ce tableau je n'ai pas besoin de
-		 * de son adresse mémoire avec p = &s ou autre.
-		 */
 			{
 			_putchar(*str);
-			str++;
+			str += 2;
 			}
 	_putchar('\n');
 	return;

@@ -14,10 +14,13 @@ void print_array(int *a, int n)
 
 	index = 0;
 
+if (n > 0)
+{
 	while (index != (n - 1))
 	{
 		printf("%d, ",  a[index]);
 		index++;
 	}
+}
 	printf("%d\n", a[index]);
 }

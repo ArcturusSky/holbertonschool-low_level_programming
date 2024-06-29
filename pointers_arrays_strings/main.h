@@ -124,4 +124,19 @@ void puts_half(char *str);
 	 * (exemple : "0123456789" devient "56789")
 	 */
 
+void print_array(int *a, int n);
+	/**
+	 * Fonction utilitaire permettant d'imprimer "n"
+	 * éléments d'un tableau d'entiers
+	 */
+
+char *_strcpy(char *dest, char *src);
+	/**
+	 * Fonction uti servant à copier la string pointée par "src" inclus \0
+	 * vers le buffer "dest".
+	 */
+int _atoi(char *s);
+	/**
+	 * Fonction permettant de convertir un string en interger
+	 */
 #endif

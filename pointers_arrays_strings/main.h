@@ -144,4 +144,8 @@ char *_strcat(char *dest, char *src);
 	/**
 	 * Fonction permettant de concatener deux strings.
 	 */
+char *_strncat(char *dest, char *src, int n);
+	/**
+	 * Fonction permettant de concatener deux strings mais différemment.
+	 */
 #endif

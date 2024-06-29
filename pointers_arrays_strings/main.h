@@ -118,4 +118,10 @@ void puts2(char *str);
 	 * (exemple : "HelloWorld" devient "Hlood")
 	 */
 
+void puts_half(char *str);
+	/**
+	 * Fonction utilitaire servant à imprimer la moitié d'une string
+	 * (exemple : "0123456789" devient "56789")
+	 */
+
 #endif

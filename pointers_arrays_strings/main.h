@@ -139,7 +139,6 @@ int _atoi(char *s);
 	/**
 	 * Fonction permettant de convertir un string en interger
 	 */
-
 char *_strcat(char *dest, char *src);
 	/**
 	 * Fonction permettant de concatener deux strings.
@@ -147,5 +146,10 @@ char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
 	/**
 	 * Fonction permettant de concatener deux strings mais différemment.
+	 */
+char *_strncpy(char *dest, char *src, int n);
+	/**
+	 * Fonction uti servant à copier la string pointée par "src" inclus \0
+	 * vers le buffer "dest".
 	 */
 #endif

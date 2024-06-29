@@ -19,9 +19,19 @@ int counting = 0;
 	}
 	for (i = 0 ; str[i] != '\0'; i++)
 	{
-		if (i >= (counting / 2))
+		if (counting % 2 != 0)
 		{
+			if (i > ((counting - 1) / 2))
+			{
 			_putchar(str[i]);
+			}
+		}
+		else
+		{
+			if (i >= (counting / 2))
+			{
+			_putchar(str[i]);
+			}
 		}
 	}
 	_putchar('\n');

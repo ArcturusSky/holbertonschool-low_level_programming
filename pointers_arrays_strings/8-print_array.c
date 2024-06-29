@@ -21,6 +21,7 @@ if (n > 0)
 		printf("%d, ",  a[index]);
 		index++;
 	}
+	printf("%d", a[index]);
 }
-	printf("%d\n", a[index]);
+printf("\n");
 }

@@ -139,4 +139,9 @@ int _atoi(char *s);
 	/**
 	 * Fonction permettant de convertir un string en interger
 	 */
+
+char *_strcat(char *dest, char *src);
+	/**
+	 * Fonction permettant de concatener deux strings.
+	 */
 #endif

@@ -135,35 +135,43 @@ char *_strcpy(char *dest, char *src);
 	 * Fonction uti servant à copier la string pointée par "src" inclus \0
 	 * vers le buffer "dest".
 	 */
+
 int _atoi(char *s);
 	/**
 	 * Fonction permettant de convertir un string en interger
 	 */
+
 char *_strcat(char *dest, char *src);
 	/**
 	 * Fonction permettant de concatener deux strings.
 	 */
+
 char *_strncat(char *dest, char *src, int n);
 	/**
 	 * Fonction permettant de concatener deux strings mais différemment.
 	 */
+
 char *_strncpy(char *dest, char *src, int n);
 	/**
 	 * Fonction uti servant à copier la string pointée par "src" inclus \0
 	 * vers le buffer "dest".
 	 */
+
 int _strcmp(char *s1, char *s2);
 	/**
 	 * Fonction permettant de comparer deux strings
 	 */
+
 void reverse_array(int *a, int n);
 	/**
 	 * Fonction permettant de renverse un tableau d'entier
 	 */
-char *string_toupper(char *);
+
+char *string_toupper(char *str);
 	/**
 	 * Fonction permettant de transformer les lower case en uppercase
 	 */
+
 char *cap_string(char *);
 	/**
 	 * Fonction permettant de mettre une majuscule à chaque mot

@@ -152,4 +152,20 @@ char *_strncpy(char *dest, char *src, int n);
 	 * Fonction uti servant à copier la string pointée par "src" inclus \0
 	 * vers le buffer "dest".
 	 */
+int _strcmp(char *s1, char *s2);
+	/**
+	 * Fonction permettant de comparer deux strings
+	 */
+void reverse_array(int *a, int n);
+	/**
+	 * Fonction permettant de renverse un tableau d'entier
+	 */
+char *string_toupper(char *);
+	/**
+	 * Fonction permettant de transformer les lower case en uppercase
+	 */
+char *cap_string(char *);
+	/**
+	 * Fonction permettant de mettre une majuscule à chaque mot
+	 */
 #endif

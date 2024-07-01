@@ -188,4 +188,9 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 	 * Fonction permettant de copier la zone mémoire d'un endroit
 	 * vers un autre (en gros la valeur)
 	 */
+
+char *_strchr(char *s, char c);
+	/**
+	 * Fonction permettant de trouver un character dans un string
+	 */
 #endif

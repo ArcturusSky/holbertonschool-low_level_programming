@@ -176,4 +176,10 @@ char *cap_string(char *);
 	/**
 	 * Fonction permettant de mettre une majuscule à chaque mot
 	 */
+
+char *_memset(char *s, char b, unsigned int n);
+	/**
+	 * Fonction permettant d'ajouter à la mémoire un byte
+	 * (en gros d'incrémenter d'une valeur...)
+	 */
 #endif

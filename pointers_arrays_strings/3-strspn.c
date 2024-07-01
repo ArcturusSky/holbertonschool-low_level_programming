@@ -1,21 +1,25 @@
 #include "main.h"
 
 /**
- * _strspn - Fonction permettant de trouver un character dans un string
+ * _strspn - Fonction permettant de trouver le nb de bytes dans la string "s"
+ * contenant seulement les bytes (character) de "accept"
  * @s: string testé
  * @accept: char recherché
- * Return: s
+ * Return: le compte
  */
 
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-	while (s != ("/0") ||  *s != c)
+	int count;
+	int index;
+
+	while (s[index] != '\0')
 	{
-		while (*s != c)
+		if (*s == *accept)
 		{
-			s++;
+			count++;
 		}
-		return (s);
+		index++;
 	}
-	return (NULL);
+return (count);
 }

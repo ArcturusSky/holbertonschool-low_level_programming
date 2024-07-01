@@ -182,4 +182,10 @@ char *_memset(char *s, char b, unsigned int n);
 	 * Fonction permettant d'ajouter à la mémoire un byte
 	 * (en gros d'incrémenter d'une valeur...)
 	 */
+
+char *_memcpy(char *dest, char *src, unsigned int n);
+	/**
+	 * Fonction permettant de copier la zone mémoire d'un endroit
+	 * vers un autre (en gros la valeur)
+	 */
 #endif

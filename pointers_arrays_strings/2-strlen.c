@@ -16,7 +16,7 @@ int _strlen(char *s)
 
 	/**
 	 * Permet de traverser le array vers lequel point s
-	 * "*s" désigne littéralement ce tableau je n'ai pas besoinde
+	 * "*s" désigne littéralement ce tableau je n'ai pas besoin de
 	 * de son adresse mémoire avec p = &s ou autre.
 	 */
 	{

@@ -193,4 +193,10 @@ char *_strchr(char *s, char c);
 	/**
 	 * Fonction permettant de trouver un character dans un string
 	 */
+
+unsigned int _strspn(char *s, char *accept);
+	/**
+	 * Fonction permettant de trouver le nombre de bytes dans la string "s"
+	 * contenant seulement les bytes (character) de "accept"
+	 */
 #endif

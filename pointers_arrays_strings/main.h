@@ -206,4 +206,11 @@ char *_strpbrk(char *s, char *accept);
 	 * dans la chaîne "s" de l'un des caractères de la chaîne "accept"
 	 * Et retourne le pointeur là où il se trouve
 	 */
+
+char *_strstr(char *haystack, char *needle);
+	/**
+	 * Fonction permettant de retrouver une sous string dans une string
+	 * les caractères "\0" ne sont pas comparés
+	 */
+
 #endif

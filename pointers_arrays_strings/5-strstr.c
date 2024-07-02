@@ -1,36 +1,33 @@
 #include "main.h"
-
-	/**
-	 * Fonction permettant de localiser une substring
-	 * @haystack: où chercher
-	 * @needle: ce que l'on cherche
-	 */
-
+/**
+ * _strstr - locates a substring
+ * @haystack: the string to be searched
+ * @needle: the substring to be located
+ *
+ * Return: a pointer to the beginning of the located substring,
+ *         or NULL if the substring is not found
+ */
 char *_strstr(char *haystack, char *needle)
 {
-	char *holder = accept;
+	int i, j;
 
-	int foundtrue; /** si char trouvé alors 1 si pas trouvé alors 0 */
-
-	while (*s != '\0')
+	if (*needle == '\0')
 	{
-		foundtrue = 0; /**initialise mon "true or false" */
-
-		while (*accept != '\0')
+		return (haystack);
+	}
+	for (i = 0; haystack[i] != '\0'; i++)
+	{
+		for (j = 0; needle[j] != '\0'; j++)
 		{
-			if (*s == *accept)
+			if (haystack[i + j] != needle[j])
 			{
-				foundtrue = 1;
 				break;
 			}
-			accept++;
 		}
-		if (foundtrue) /** Si trouvé est vrai (donc si = 1 ) */
+		if (needle[j] == '\0')
 		{
-			break; /** alors sort de la grande boucle */
+			return (&haystack[i]);
 		}
-		accept = holder;
-		s++;
 	}
+	return ('\0');
 }
-

@@ -10,16 +10,29 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int count;
-	int index;
+	int count = 0;
+	char *holder = s;
 
-	while (s[index] != '\0')
+    /** ai = accept index */
+
+	while (*accept != '\0')
 	{
-		if (*s == *accept)
+		while (*s != '\0')
 		{
-			count++;
+			if (*s == *accept)
+			{
+				count++;
+				s++;
+				break;
+			}
+			else
+			{
+			s++;
+			}
 		}
-		index++;
+		s = holder;
+		accept++;
 	}
+	count++;
 return (count);
 }

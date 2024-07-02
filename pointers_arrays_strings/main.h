@@ -199,4 +199,11 @@ unsigned int _strspn(char *s, char *accept);
 	 * Fonction permettant de trouver le nombre de bytes dans la string "s"
 	 * contenant seulement les bytes (character) de "accept"
 	 */
+
+char *_strpbrk(char *s, char *accept);
+	/**
+	 * Fonction permettant de rechercher la première occurrence
+	 * dans la chaîne "s" de l'un des caractères de la chaîne "accept"
+	 * Et retourne le pointeur là où il se trouve
+	 */
 #endif

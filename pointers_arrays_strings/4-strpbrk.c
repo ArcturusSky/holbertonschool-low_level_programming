@@ -34,5 +34,5 @@ char *_strpbrk(char *s, char *accept)
 		accept = holder;
 		s++;
 	}
-return (accept);
+return (s);
 }

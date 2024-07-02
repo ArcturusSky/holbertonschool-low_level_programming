@@ -11,28 +11,31 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	int count = 0;
-	char *holder = s;
+	char *holder = accept;
 
-    /** ai = accept index */
+	int foundtrue; /** si char trouvé alors 1 si pas trouvé alors 0 */
 
-	while (*accept != '\0')
+	while (*s != '\0')
 	{
-		while (*s != '\0')
+		foundtrue = 0; /**initialise mon "true or false" */
+
+		while (*accept != '\0')
 		{
 			if (*s == *accept)
 			{
 				count++;
-				s++;
+				foundtrue = 1;
 				break;
 			}
-			else
-			{
-			s++;
-			}
+			accept++;
 		}
-		s = holder;
-		accept++;
+		if (!foundtrue) /** Si "trouvé" n'est pas vrai (donc si pas = 1) */
+		{
+			break; /** alors sort de la grande boucle */
+		}
+
+		accept = holder;
+		s++;
 	}
-	count++;
 return (count);
 }

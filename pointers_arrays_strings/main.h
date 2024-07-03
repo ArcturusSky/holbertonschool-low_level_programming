@@ -217,4 +217,11 @@ void print_chessboard(char (*a)[8]);
 	/**
 	 * Fonction permettant d'imprimer un échiquier
 	 */
+
+void print_diagsums(int *a, int size);
+	/**
+	 * Fonction permettant de print la somme de la diagonale
+	 * d'une matrice en forme de carré (en gros d'un tableau)
+	 */
+
 #endif

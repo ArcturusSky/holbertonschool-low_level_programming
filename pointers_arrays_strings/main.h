@@ -213,4 +213,8 @@ char *_strstr(char *haystack, char *needle);
 	 * les caractères "\0" ne sont pas comparés
 	 */
 
+void print_chessboard(char (*a)[8]);
+	/**
+	 * Fonction permettant d'imprimer un échiquier
+	 */
 #endif

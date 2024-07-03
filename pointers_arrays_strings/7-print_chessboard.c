@@ -12,9 +12,9 @@ void print_chessboard(char (*a)[8])
 	int ilong = 0;
 	int ilarge = 0;
 
-	while (*a[ilong] != '\0')
+	while (ilong < 8)
 	{
-		while (*a[ilarge] != '\0')
+		while (ilarge < 8)
 		{
 			_putchar(a[ilong][ilarge]);
 			ilarge++;

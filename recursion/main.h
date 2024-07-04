@@ -14,4 +14,7 @@ void _print_rev_recursion(char *s);
 int _strlen_recursion(char *s);
 	/** Fonction permettant de calculer la taille d'une string */
 
+int factorial(int n);
+	/** Fonction permettant de calculer la factoriel d'un nombre */
+
 #endif

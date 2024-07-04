@@ -8,4 +8,7 @@ int _putchar(char c);
 void _puts_recursion(char *s);
 	/** Fonction permettant de print un string mais en récursion */
 
+void _print_rev_recursion(char *s);
+	/** Fonction permettant de print un string à l'envers mais en récursion */
+
 #endif

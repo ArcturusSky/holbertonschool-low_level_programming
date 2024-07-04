@@ -17,4 +17,7 @@ int _strlen_recursion(char *s);
 int factorial(int n);
 	/** Fonction permettant de calculer la factoriel d'un nombre */
 
+int _pow_recursion(int x, int y);
+	/** Fonction permettant de retourner la valeur de x puissance y */
+
 #endif

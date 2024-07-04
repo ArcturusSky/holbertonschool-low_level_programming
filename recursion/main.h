@@ -11,4 +11,7 @@ void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
 	/** Fonction permettant de print un string à l'envers mais en récursion */
 
+int _strlen_recursion(char *s);
+	/** Fonction permettant de calculer la taille d'une string */
+
 #endif

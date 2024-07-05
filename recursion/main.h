@@ -22,4 +22,8 @@ int _pow_recursion(int x, int y);
 
 int _sqrt_recursion(int n);
 	/** Fonction permettant de retourner la valeur de la racine carrée de n */
+
+int is_prime_number(int n);
+	/** Fonction permettant de retourner 1 si n est un nombre premier */
+
 #endif

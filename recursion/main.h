@@ -20,4 +20,6 @@ int factorial(int n);
 int _pow_recursion(int x, int y);
 	/** Fonction permettant de retourner la valeur de x puissance y */
 
+int _sqrt_recursion(int n);
+	/** Fonction permettant de retourner la valeur de la racine carrée de n */
 #endif

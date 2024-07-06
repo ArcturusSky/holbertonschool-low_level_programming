@@ -1,25 +1,32 @@
 #include "main.h"
 
 /**
- * _memcpy - Fonction permettant de copier la zone mémoire d'un endroit
- * vers un autre (en gros la valeur)
- * @src: mémoire source
- * @dest: mémoire destination
- * @n: nombre de bytes qui doivent être recouverts
+ * _memcpy - Function allowing us to copy the memory area zone from one point
+ * to another
+ * @src: source zone
+ * @dest: destination zone
+ * @n: number of bytes to copy
  * Return: dest
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int count;
+	char *original_dest = dest;
+	/** Store the original pointer to return later */
 
-	for (count = 0 ; count != n ; count++)
+	/**  Loop through each byte to copy from src to dest */
+	while (n > 0)
 	{
 		*dest = *src;
-		src++;
+		/** Copy the current byte from src to dest */
 		dest++;
+		/** Move dest pointer to the next byte */
+		src++;
+		/** Move src pointer to the next byte */
+		n--;
+		/** Decrement the count of bytes left to copy */
 	}
 
-	return (dest);
-
-}
+	return (original_dest);
+	/** Return the original destination pointer */
+	}

@@ -10,29 +10,21 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	char *holder = accept;
-
-	int foundtrue; /** si char trouvé alors 1 si pas trouvé alors 0 */
-
 	while (*s != '\0')
 	{
-		foundtrue = 0; /**initialise mon "true or false" */
+		char *a = accept;
 
-		while (*accept != '\0')
+		while (*a != '\0')
 		{
-			if (*s == *accept)
+			if (*s == *a)
 			{
-				foundtrue = 1;
-				break;
+				return (s);
+			/** Return pointer to the matching byte */
 			}
-			accept++;
+			a++;
 		}
-		if (foundtrue) /** Si trouvé est vrai (donc si = 1 ) */
-		{
-			break; /** alors sort de la grande boucle */
-		}
-		accept = holder;
 		s++;
 	}
-return (s);
+return (NULL);
+/** Return NULL if no matching byte is found */
 }

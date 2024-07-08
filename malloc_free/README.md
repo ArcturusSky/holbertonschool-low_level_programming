@@ -45,11 +45,11 @@ Note : I will start this README.md with the default allocation we used until now
 
 **In short:**
 
-	Automatic allocation of memory means that the allocation and *deallocation* of memory are automatically managed by the compiler. It's used when the memory needs are already known and fixed. 
+Automatic allocation of memory means that the allocation and *deallocation* of memory are automatically managed by the compiler. It's used when the memory needs are already known and fixed. 
 
 **Definition:**
 
-	Automatic allocation allocates memory on the stack for local variables with a predetermined size defined at compile time, and this memory is deallocated (freed) when the function returns.
+Automatic allocation allocates memory on the stack for local variables with a predetermined size defined at compile time, and this memory is deallocated (freed) when the function returns.
 
 - **Caracteristics:**
 

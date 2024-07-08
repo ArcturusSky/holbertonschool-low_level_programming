@@ -266,4 +266,10 @@ void print_diagsums(int *a, int size);
 	 * d'une matrice en forme de carré (en gros d'un tableau)
 	 */
 
+char *create_array(unsigned int size, char c);
+	/**
+	 * Function that creates an array of chars
+	 * and initialized it with a specific char.
+	 */
+
 #endif

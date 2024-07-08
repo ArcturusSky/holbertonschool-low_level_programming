@@ -1,32 +1,30 @@
-# ARGC ARGV and unused variables
+# ARGC, ARGV, and Unused Variables
 
-This repository is part of the `low-programming` parent repository focused on C programming. Here, I'm starting to learn and work with `argc` and `argv` for the first time. This repository will then contain the task I had to complete about these two parameters. It will also add a little part on "how to compile a file when a variable is unused inside it?"
+This repository is part of the `low-programming` parent repository focused on C programming. Here, I'm starting to learn and work with `argc` and `argv` for the first time. This repository will then contain the tasks I had to complete about these two parameters. It will also add a little part on "how to compile a file when a variable is unused inside it?"
 
 ## Summary
 
-- [ARGC ARGV and unused variables](#argc-argv-and-unused-variables)
+- [ARGC, ARGV, and Unused Variables](#argc-argv-and-unused-variables)
 	- [Summary](#summary)
 	- [Definition](#definition)
-	- [How to use ?](#how-to-use-)
+	- [How to use?](#how-to-use)
 	- [Macros](#macros)
 	- [How to compile a file when a variable is unused inside it](#how-to-compile-a-file-when-a-variable-is-unused-inside-it)
-	- [\`\`\`](#)
 	- [Author](#author)
 
 ## Definition
 
-`argc` and `argv` are two parameters used to handle and control programs, especially in relation to user input. 
+`argc` and `argv` are two parameters used to handle and control programs, especially in relation to user input.
 
-- `argv` stands for `arguments count`. It counts every arguments provided in the command line, including the program itself, and thus represents the size of `argv` array.
+- `argc` stands for "arguments count". It counts every argument provided in the command line, including the program itself, and thus represents the size of the `argv` array.
 
-- `argv` stands for `arguments vector`  - It's an arrays of strings where each elements represents an argument passed to the program. The array includes a terminating `NULL` pointer, making its size equivalent to `argc`. The indices of `argv` start from 0, `with argv[0]` ypically being the name or path of the program itself. And so argv[argc] being `NULL`.
+- `argv` stands for "arguments vector". It's an array of strings where each element represents an argument passed to the program. The array includes a terminating `NULL` pointer, making its size equivalent to `argc`. The indices of `argv` start from 0, with `argv[0]` typically being the name or path of the program itself, and `argv[argc]` being `NULL`.
 
-## How to use ?
+## How to use?
 
-**Declaration:**
+- **Declaration:**
 To use `argc` and `argv` in your C program, declare your `main` function as follows:
 
--------------------------
 ```c
 int main(int argc, char *argv[]) {
     // Your code here
@@ -34,11 +32,9 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS; // Return 0 if program executes successfully
 }
 ```
--------------------------
 
-**Exemple usage in `main`function:**
+- **Exemple usage in `main`function:**
 
--------------------------
 ```c
 int main(int argc, char *argv[]) 
 {
@@ -55,11 +51,10 @@ int main(int argc, char *argv[])
     return EXIT_SUCCESS;
 }
 ```
--------------------------
 
-**Explanation**
+- **Explanation**
 
-`argc`: Represents the number of command-line arguments passed to the program, including the program's name itself (argv[0]).
+`argc`: Represents the number of command-line arguments passed to the program, including the program's name itself (`argv[0]`).
 
 `argv`: An array of strings (char *argv[]) where each element is a command-line argument passed to the program. argv[0] typically contains the program's name, and subsequent elements (argv[1], argv[2], etc.) contain the actual arguments passed.
 
@@ -75,7 +70,8 @@ If you want to compile a file with an unused variable inside you will have to in
 		
 		You can always use that variable in a uneventful loop. In the following exemple `argc` will always be higher than 0. It's just for using the variable :
 
--------------------------
+	Exemple:
+	
 ```c
 		int main(int argc, char *argv[])
 {
@@ -87,14 +83,13 @@ If you want to compile a file with an unused variable inside you will have to in
 return (EXIT_SUCCESS);
 }
 ```
---------------------------
 
   **- 2: __attribute__((unused))**
 
 		Write `__attribute__ ((unused))` right before the declaration of your variable which will be unused and add  `unused_` as a prefix to you variable.
-		Exemple:
+		
+	Exemple:
 
---------------------------
 	```c
 	int main(int argc, char *argv[])
 {
@@ -107,14 +102,14 @@ return (EXIT_SUCCESS);
     return (EXIT_SUCCESS);
 }
 ```
---------------------------
+
 
   **- 3: (void)variable**
 		
 		If your variable has been declared in the prototype, or you just want to use another way to ignore an unused variable. You can just add line at the end of your program. This line is (void)name_of_your_variable. This way compiler will know that this variable should be ignore during the compilation.
-		Exemple:
+	
+	Exemple:
 
---------------------------
 	```c
 #include <stdlib.h>
 #include <stdio.h>
@@ -127,8 +122,7 @@ int main(int argc, char *argv[])
 
     return EXIT_SUCCESS;
 }
-	```
---------------------------
+```
 
 ## Author
 

@@ -43,11 +43,11 @@ Note : I will start this README.md with the default allocation we used until now
 
 ## Automatic Allocation
 
-- **In short:**
+**In short:**
 
 	Automatic allocation of memory means that the allocation and *deallocation* of memory are automatically managed by the compiler. It's used when the memory needs are already known and fixed. 
 
-- **Definition:**
+**Definition:**
 
 	Automatic allocation allocates memory on the stack for local variables with a predetermined size defined at compile time, and this memory is deallocated (freed) when the function returns.
 
@@ -89,25 +89,28 @@ Dynamic allocation in C allows memory to be allocated during program execution u
 
 ### How `malloc` works
 
-	- **Use:** Allocate a given memory block of the requiered size and no more or less.
+**Use:** Allocate a given memory block of the requiered size and no more or less.
 	
-	- **Prototype:** 
+**Prototype:** 
+
   ```c 
   void* malloc(size_t size);
   ``` 
 	
-	- **Return:** Return a pointer to the allocated memory area or "NULL" in case of faillure.
+**Return:** Return a pointer to the allocated memory area or "NULL" in case of faillure.
 
 *Exemple:*
+
 ```c
 int *pointer = (int*) malloc(10 * sizeof(int)); /** allocate memory for 10 int. */ 
 ```	
 
 ### How `free` works
 
-	- **Use:** Deallocate a memory bloc allocate by `malloc`, `calloc` or `realloc`.
+**Use:** Deallocate a memory bloc allocate by `malloc`, `calloc` or `realloc`.
 	
-	- **Prototype:** 
+**Prototype:** 
+
   ```c 
   void free(void* pointer);
   ``` 
@@ -118,7 +121,7 @@ int *pointer = (int*) malloc(10 * sizeof(int)); /** allocate memory for 10 int. 
 free(pointer); /** Deallocate the memory allocate to "pointer". */
 ```
 
-	*Concret exemple using both malloc and free:*
+*Concret exemple using both malloc and free:*
 
 ```c
 #include <stdlib.h>
@@ -208,20 +211,20 @@ Understanding the differences and trade-offs between automatic and dynamic alloc
 
 - **How to use Valgrind:**
 
-  1. **Installation:** Ensure Valgrind is installed on your system
-  2. **Compile:** Compile your C program with debugging symbols enabled (-g flag).
+**Installation:** Ensure Valgrind is installed on your system
+**Compile:** Compile your C program with debugging symbols enabled (-g flag).
   
 ```bash
 gcc -g -o myprogram myprogram.c
 ```
   
-  3. **Run Valgrind:** Use Valgrind to analyse your program by running it through Valgrind's memory checking tool `memcheck`.
+**Run Valgrind:** Use Valgrind to analyse your program by running it through Valgrind's memory checking tool `memcheck`.
   
 ```bash
 valgrind --tool=memcheck ./myprogram
 ```
   
-  4. **Interpret results:** Valgrind will provide detailed information about memory errors and leaks detected during the program execution.
+**Interpret results:** Valgrind will provide detailed information about memory errors and leaks detected during the program execution.
 
 ## Conclusion
 

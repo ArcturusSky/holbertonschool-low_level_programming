@@ -77,7 +77,7 @@ Note : I will start this README.md with the default allocation we used until now
 
 ## Dynamic Allocation
 
-	Dynamic allocation in C allows memory to be allocated during program execution using `malloc`. It's used when the memory size needed isn't known beforehand or when flexible data structures like large arrays are required.
+Dynamic allocation in C allows memory to be allocated during program execution using `malloc`. It's used when the memory size needed isn't known beforehand or when flexible data structures like large arrays are required.
 
 - **Caracteristics:**
 

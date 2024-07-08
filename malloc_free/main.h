@@ -272,4 +272,10 @@ char *create_array(unsigned int size, char c);
 	 * and initialized it with a specific char.
 	 */
 
+char *_strdup(char *str);
+	/**
+	 * Function that returns a pointer to a newly allocated space in memory
+	 * which contains a copy of the string given as a parameter.
+	 */
+
 #endif

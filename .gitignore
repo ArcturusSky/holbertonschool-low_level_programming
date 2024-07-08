@@ -2,4 +2,4 @@ recursion/main.h.gch
 recursion/6-prime
 recursion/*-main.c
 argc_argv/nargs
-malloc_free/0-main.c
+malloc_free/*-main.c

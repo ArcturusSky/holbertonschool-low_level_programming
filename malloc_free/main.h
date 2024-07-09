@@ -279,6 +279,7 @@ char *_strdup(char *str);
 	 * which contains a copy of the string given as a parameter.
 	 */
 
-
+char *str_concat(char *s1, char *s2);
+	/** Function that concatenates two strings */
 
 #endif

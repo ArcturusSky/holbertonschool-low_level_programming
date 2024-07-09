@@ -34,13 +34,6 @@ char *_strdup(char *str)
 		return (NULL); /** Check if malloc failed */
 	}
 
-/**
- * _strcpy - Fonction qui sert à copier une string ailleurs
- * @dest: destination de la copie
- * @src: source de la copie
- * Return: dest
- */
-
 	strcpy(duplicate, str);
 	/** Call _strcpy */
 

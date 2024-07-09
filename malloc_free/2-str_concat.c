@@ -36,8 +36,6 @@ int count = 0;
 
 return (depart);
 }
-
-
 /**
  * str_concat - Concatenates two strings while allowing
  * the exact right ammount of memory space
@@ -49,10 +47,7 @@ return (depart);
 
 char *str_concat(char *s1, char *s2)
 {
-	int size1 = 0;
-	int size2 = 0;
-	int index = 0;
-	int totalsize = 0;
+	int size1, size2, index, totalsize;
 	char *conca_string;
 
 	if (s1 == NULL)
@@ -74,21 +69,16 @@ char *str_concat(char *s1, char *s2)
 		size2++;
 		index++;
 	}
-
 	totalsize = (size1 + size2) + 1; /** one more index to include \0 caracter */
 	conca_string = malloc(totalsize * sizeof(char));
-
 	if (conca_string == NULL)
 	{
 		return (NULL); /** Check if malloc failed */
 	}
+	_strncat(conca_string, s1, size1); /** _strncat to add s1 to conca_string */
+	_strncat(conca_string, s2, size2); /**_strncat to add s2 to conca_string */
 
-	_strncat(conca_string, s1, size1);
-	/** Call _strncat to concatenate the strings */
-	_strncat(conca_string, s2, size2);
-	/** Call _strncat to concatenate the strings */
-
-	conca_string[totalsize] = '\0';
+	conca_string[totalsize] = '\0'; /** adding \0 character to conca_string */
 
 	return (conca_string);
 }

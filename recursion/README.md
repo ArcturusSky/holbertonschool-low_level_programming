@@ -22,28 +22,34 @@ void print(int nb) {
         print(nb);
     }
 }
-
+```
+```c
 int main(void) {
     print(2);
     return 0;
 }
+```
 
 ## Modèle pour Implémenter la Récursion en C
 
 ```c
-// 1. Déclaration de la fonction récursive
-type_de_retour nom_de_la_fonction(type paramètre) {
-    // 2. Cas de base : condition qui termine la récursion
-    if (condition) {
-        return valeur_de_retour; // Valeur qui arrête la récursion
-    }
-    // 3. Cas récursif : appel de la fonction avec des paramètres modifiés
+/** 1. Déclaration de la fonction récursive */
+type_de_retour nom_de_la_fonction(type paramètre) 
+{
+	/** 2. Cas de base : condition qui termine la récursion */
+	if (condition) 
+	{
+		 return valeur_de_retour; // Valeur qui arrête la récursion
+	}
+    /** 3. Cas récursif : appel de la fonction avec des paramètres modifiés */
     return opération(nom_de_la_fonction(modification_du_paramètre));
 }
-
+```
+```c
 // 4. Fonction main pour tester la récursion
 int main(void) {
     type resultat = nom_de_la_fonction(valeur_initiale);
     // Affichage ou utilisation du résultat
     return 0;
 }
+```

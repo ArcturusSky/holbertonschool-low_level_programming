@@ -49,5 +49,46 @@ return (depart);
 
 char *str_concat(char *s1, char *s2)
 {
+	int size1 = 0;
+	int size2 = 0;
+	int index = 0;
+	int totalsize = 0;
+	char *conca_string;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+	while (s1[index] != '\0')
+	{
+		size1++;
+		index++;
+	}
+	index = 0;
+		while (s2[index] != '\0')
+	{
+		size2++;
+		index++;
+	}
+
+	totalsize = (size1 + size2) + 1; /** one more index to include \0 caracter */
+	conca_string = malloc(totalsize * sizeof(char));
+
+	if (conca_string == NULL)
+	{
+		return (NULL); /** Check if malloc failed */
+	}
+
+	_strncat(conca_string, s1, size1);
+	/** Call _strncat to concatenate the strings */
+	_strncat(conca_string, s2, size2);
+	/** Call _strncat to concatenate the strings */
+
+	conca_string[totalsize] = '\0';
+
+	return (conca_string);
 }

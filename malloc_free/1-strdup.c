@@ -55,8 +55,6 @@ char *_strdup(char *str)
 		return (NULL); /** Check if malloc failed */
 	}
 
-#include "main.h"
-
 	_strcpy(duplicate, str);
 	/** Call _strcpy */
 

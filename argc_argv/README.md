@@ -66,7 +66,7 @@ When using `argc` and `argv`, it's common practice to utilize the macros `EXIT_F
 
 If you want to compile a file with an unused variable inside you will have to indicate to the compiler that this variable has been unused on purpose. For that there is three differents technique:
 
-  - **1: Use the variable even for something unuseful**
+- **1: Use the variable even for something unuseful**
 		
 		You can always use that variable in a uneventful loop. In the following exemple `argc` will always be higher than 0. It's just for using the variable :
 
@@ -84,13 +84,13 @@ return (EXIT_SUCCESS);
 }
 ```
 
-  **- 2: __attribute__((unused))**
+**- 2: __attribute__((unused))**
 
 		Write `__attribute__ ((unused))` right before the declaration of your variable which will be unused and add  `unused_` as a prefix to you variable.
 		
 	Exemple:
 
-	```c
+```c
 	int main(int argc, char *argv[])
 {
     __attribute__((unused)) int unused_argc; // Declare argc as unused.
@@ -102,15 +102,13 @@ return (EXIT_SUCCESS);
     return (EXIT_SUCCESS);
 }
 ```
-
-
-  **- 3: (void)variable**
+**- 3: (void)variable**
 		
 		If your variable has been declared in the prototype, or you just want to use another way to ignore an unused variable. You can just add line at the end of your program. This line is (void)name_of_your_variable. This way compiler will know that this variable should be ignore during the compilation.
 	
 	Exemple:
 
-	```c
+```c
 #include <stdlib.h>
 #include <stdio.h>
 

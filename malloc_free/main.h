@@ -225,10 +225,11 @@ char *_memset(char *s, char b, unsigned int n);
 	 * (en gros d'incrémenter d'une valeur...)
 	 */
 
-char *_memcpy(char *dest, char *src, unsigned int n);
+void *_memcpy(void *dest, const void *src, size_t n);
 	/**
-	 * Fonction permettant de copier la zone mémoire d'un endroit
-	 * vers un autre (en gros la valeur)
+	 * Function that copies a memory block specified by the parameter src
+	 * and which the size has been specified by the parameter size,
+	 * in a new emplacement designated by dest
 	 */
 
 char *_strchr(char *s, char c);
@@ -277,5 +278,7 @@ char *_strdup(char *str);
 	 * Function that returns a pointer to a newly allocated space in memory
 	 * which contains a copy of the string given as a parameter.
 	 */
+
+
 
 #endif

@@ -58,13 +58,13 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	while (s1[index] != '\0')
+	index = 0;
+	for (size1 = 0 ; s1[index] != '\0' ; index++)
 	{
 		size1++;
-		index++;
 	}
 	index = 0;
-		while (s2[index] != '\0')
+		for (size2 = 0 ; s2[index] != '\0' ; index++)
 	{
 		size2++;
 		index++;

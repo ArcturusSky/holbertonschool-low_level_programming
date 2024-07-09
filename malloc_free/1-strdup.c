@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * _strdup - Function that return a pointer to a newly
@@ -34,15 +35,8 @@ char *_strdup(char *str)
 		return (NULL); /** Check if malloc failed */
 	}
 
-/**
- * _strcpy - Fonction qui sert à copier une string ailleurs
- * @dest: destination de la copie
- * @src: source de la copie
- * Return: dest
- */
-
-	_strcpy(duplicate, str);
-	/** Call _strcpy */
+	strcpy(duplicate, str);
+	/** Call strcpy */
 
 	return (duplicate);
 }

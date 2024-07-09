@@ -61,7 +61,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	while for (s1[index] != '\0')
+	while (s1[index] != '\0')
 	{
 		size1++;
 		index++;

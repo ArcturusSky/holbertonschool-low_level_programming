@@ -12,6 +12,7 @@ Note : I will start this README.md with the default allocation we used until now
 	- [Automatic Allocation](#automatic-allocation)
 	- [Dynamic Allocation](#dynamic-allocation)
 		- [How `malloc` works](#how-malloc-works)
+		- [How `free` works](#how-free-works)
 	- [Comparison Between Automatic and Dynamic Allocation](#comparison-between-automatic-and-dynamic-allocation)
 		- [Automatic Allocation](#automatic-allocation-1)
 		- [Dynamic Allocation](#dynamic-allocation-1)
@@ -87,6 +88,7 @@ Dynamic allocation in C allows memory to be allocated during program execution u
 	
 	- **Lifespan:** Dynamic memory stays until it's been deallocated manually with `**free**` function. So it's not limited to it's function, a bit like global variables.
 
+
 ### How `malloc` works
 
 **Use:** Allocate a given memory block of the requiered size and no more or less.
@@ -101,9 +103,10 @@ Dynamic allocation in C allows memory to be allocated during program execution u
 
 *Exemple:*
 
-```c
+````c
 int *pointer = (int*) malloc(10 * sizeof(int)); /** allocate memory for 10 int. */ 
-```	
+````
+
 
 ### How `free` works
 

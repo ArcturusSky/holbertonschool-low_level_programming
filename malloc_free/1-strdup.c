@@ -35,8 +35,8 @@ char *_strdup(char *str)
 		return (NULL); /** Check if malloc failed */
 	}
 
-	strcpy(duplicate, str);
-	/** Call strcpy */
+	memcpy(duplicate, str, count);
+	/** Call memcpy which is MEANT to copy a memory block */
 
 	return (duplicate);
 }

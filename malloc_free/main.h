@@ -285,4 +285,10 @@ char *str_concat(char *s1, char *s2);
 int **alloc_grid(int width, int height);
 	/** Function that returns a pointer to a 2 dimensional array of integers */
 
+void free_grid(int **grid, int height);
+	/**
+	 * Function that free a 2 dimensional grid previously
+	 * created by alloc_grid function
+	 */
+
 #endif

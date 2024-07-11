@@ -13,16 +13,10 @@
 void free_grid(int **grid, int height)
 {
 	int ligne = 0;
-	int colonne = 0;
 
 	for (ligne = 0; ligne < height; ligne++)
 	{
 		{
-			/** Libération de la mémoire déjà allouée */
-			for (colonne = 0; colonne < ligne; colonne++)
-			{
-				free(grid[colonne]);
-			}
 		free(grid[ligne]);
 		}
 	}

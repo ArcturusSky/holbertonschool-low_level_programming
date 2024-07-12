@@ -51,8 +51,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int size1 = 0;
 	unsigned int size2 = 0;
-	int index = 0;
-	int totalsize;
+	unsigned int index = 0;
+	unsigned int totalsize = 0;
 	char *conca_string;
 
 	if (s1 == NULL)

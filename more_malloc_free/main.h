@@ -307,4 +307,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n);
 	 * Function that concatenates two strings
 	 */
 
+void *_calloc(unsigned int nmemb, unsigned int size);
+	/**
+	 * Function that allocates memory for an array, using malloc.
+	 */
+
 #endif

@@ -29,10 +29,7 @@ int count = 0;
 		count++;
 	}
 
-	if (count < n)
-	{
 	*dest = '\0';
-	}
 
 
 return (depart);
@@ -74,16 +71,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		size2++;
 		index++;
 	}
-	totalsize = (size1 + size2) + 1; /** one more index to include \0 caracter */
-	conca_string = malloc(totalsize * sizeof(char));
+	totalsize = size1 + size2; /** one more index to include \0 caracter */
+	conca_string = malloc((totalsize + 1) * sizeof(char));
 	if (conca_string == NULL)
 	{
 		return (NULL); /** Check if malloc failed */
 	}
+		conca_string[0] = '\0'; /** adding \0 character to conca_string */
+
 	_strncat(conca_string, s1, size1); /** _strncat to add s1 to conca_string */
 	_strncat(conca_string, s2, size2); /**_strncat to add s2 to conca_string */
 
-	conca_string[totalsize] = '\0'; /** adding \0 character to conca_string */
 
 	return (conca_string);
 }

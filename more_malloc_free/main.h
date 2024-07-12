@@ -312,4 +312,9 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 	 * Function that allocates memory for an array, using malloc.
 	 */
 
+int *array_range(int min, int max);
+	/**
+	 * Function that creates an array of integers.
+	 */
+
 #endif

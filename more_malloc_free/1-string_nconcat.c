@@ -4,7 +4,7 @@
 
 
 /**
- * _strncat - Fonction qui sert à concactener deux string
+ * _strncat - Fonction qui sert à concactener deux strings
  * @dest: destination
  * @src: source
  * @n: nombre de bytes limite

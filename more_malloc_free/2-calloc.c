@@ -34,19 +34,21 @@ char *_memset(char *s, char b, unsigned int n)
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *totalmemesize;
+	void *totalmemsize;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
 
-	totalmemesize = malloc(nmemb * size);
+	totalmemsize = malloc(nmemb * size);
 
-	if (totalmemesize == NULL)
+	if (totalmemsize == NULL)
 	{
 		return (NULL);
 	}
 
-	_memset(totalmemsize, 0, nmemb * size)
+	_memset(totalmemsize, 0, nmemb * size);
+
+	return (totalmemsize);
 }

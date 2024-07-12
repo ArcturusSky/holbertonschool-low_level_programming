@@ -98,10 +98,12 @@ Dynamic allocation in C allows memory to be allocated during program execution u
 
 **Use:** Allocate a given memory block of the requiered size and no more or less.
 	
-**Prototype:** 
+**Template for `malloc` function :** 
 
   ```c 
-  void* malloc(size_t size);
+  variable_name = malloc(number_of_elements * sizeof(type_of_element));
+
+  /** NOTE: "variable_name" **MUST** to be declared as a pointer before. */
   ``` 
 	
 **Return:** Return a pointer to the allocated memory area or "NULL" in case of faillure.
@@ -109,17 +111,20 @@ Dynamic allocation in C allows memory to be allocated during program execution u
 *Exemple:*
 
 ````c
-int *pointer = (int*) malloc(10 * sizeof(int)); /** allocate memory for 10 int. */ 
+int *array;
+array = (int*) malloc(10 * sizeof(int)); /** allocate memory for 10 int. */ 
 ````
 
 ### How `calloc` works
 
 **Use:** Allocate memory for an **array** of elements, initializing them to **zero**.
 	
-**Prototype:** 
+**Template for `calloc` function:** 
 
   ```c 
-  void *calloc(size_t num, size_t size);
+   variable_name = calloc(number_of_elements, sizeof(type_of_element));
+
+  /** NOTE: "variable_name" **MUST** to be declared as a pointer before. */
   ``` 
 	
 **Return:** Return a pointer to the allocated memory. This memory is set up correctly so any type of variable (like an int, char or float) can be stored in it. If allocation fails, return **NULL**
@@ -139,10 +144,18 @@ int *pointer = (int*) malloc(10 * sizeof(int)); /** allocate memory for 10 int. 
 
 **Use:** Used to **resize** previously allocated memory blocks, either extending or shrinking them as needed.
 	
-**Prototype:** 
+**Template for `realloc` function:** 
 
   ```c 
-  void *realloc(void *ptr, size_t size);
+  variable_name = realloc(existing_ptr, new_size);
+
+  /** 
+   * NOTE: `variable_name` **MUST** to be declared as a pointer before. -> will hold the address of the relocated memory
+   * 
+   * `existing_ptr` **MUST** be declared as a pointer before too -> pointer to the memory PREVIOUSLY allocated by `malloc`, `calloc` or `realloc`
+   * 
+   * `new_size` is the new size of the allocated memory
+   */
   ``` 
 	
 **Return:** Return a pointer to the newly allocated memory, which may be the same as the original or a new location if the block was moved. If "size" is 0, it retuns **NULL** and free the original block.
@@ -178,10 +191,10 @@ int *pointer = (int*) malloc(10 * sizeof(int)); /** allocate memory for 10 int. 
 
 **Use:** Deallocate a memory bloc allocate by `malloc`, `calloc` or `realloc`.
 	
-**Prototype:** 
+**Template for `free` function:** 
 
   ```c 
-  void free(void* pointer);
+ free(pointer_to_deallocate);;
   ``` 
 
 *Exemple:*

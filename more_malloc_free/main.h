@@ -296,4 +296,10 @@ char *argstostr(int ac, char **av);
 	 * Function that concatenates all the arguments of your program
 	 */
 
+void *malloc_checked(unsigned int b);
+	/**
+	 * Function that allocates memory using malloc
+	 * and also introduce the use of exit
+	 */
+
 #endif

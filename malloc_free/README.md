@@ -101,7 +101,11 @@ Dynamic allocation in C allows memory to be allocated during program execution u
   ```c 
   variable_name = malloc(number_of_elements * sizeof(type_of_element));
 
-  /** NOTE: "variable_name" **MUST** to be declared as a pointer before. */
+ /** NOTE: "variable_name" **MUST** to be declared as a pointer before. */
+ /**
+  * NOTE: if you already know numbers of bytes (don't forget to chain your "main.c" used for exercises)
+  * then no need for "sizeof"
+  * /
   ``` 
 	
 **Return:** Return a pointer to the allocated memory area or "NULL" in case of faillure.

@@ -302,4 +302,9 @@ void *malloc_checked(unsigned int b);
 	 * and also introduce the use of exit
 	 */
 
+char *string_nconcat(char *s1, char *s2, unsigned int n);
+	/**
+	 * Function that concatenates two strings
+	 */
+
 #endif

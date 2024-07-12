@@ -14,6 +14,11 @@ void *malloc_checked(unsigned int b)
 	unsigned int *memory;
 
 	memory = malloc(b);
+	/**
+	 * Directly allocate (b)
+	 * no need for sizeof since the byte size with
+	 * sizeof has already been given in the 0-main.c
+	 */
 
 	if (memory == NULL)
 	{

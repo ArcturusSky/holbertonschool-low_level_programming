@@ -1,5 +1,7 @@
 # Dynamic and automatic memory allocation in C
 
+**NOTE: This README.md is a copy of the previous one in the repository "malloc_free" since it's on the same subject.**
+
 This repository is part of the `low-programming` parent repository focused on C programming. Here, I'm starting to learn and work with `malloc`, `calloc`,  `realloc` and `free` for the first time. I will also explain how to use Valgrind to check for memory leaks and using the `exit` fonction. This repository will then contain the tasks I had to complete about these functions. 
 
 Note : I will start this README.md with the default allocation we used until now : "Automatic Allocation". I will also update that README.md regarding new concepts I have to learn during these projects.

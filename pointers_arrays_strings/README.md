@@ -10,10 +10,9 @@ This repository is part of the `low-programming` parent repository focused on C 
 	- [Glossary](#glossary)
 	- [Pointers](#pointers)
 		- [Why using pointers?:](#why-using-pointers)
-	- [](#)
 		- [How `function` works](#how-function-works)
-	- [](#-1)
-		- [](#-2)
+	- [Arrays](#arrays)
+	- [Strings](#strings)
 	- [Conclusion](#conclusion)
 	- [Author](#author)
 
@@ -27,7 +26,7 @@ This repository is part of the `low-programming` parent repository focused on C 
 
   - **String:** A sequence of characters terminated by a **null character (`'\0'`)**, often implemented as an *array* of `char` 
 
-  - **Dynamic Memory Allocation:**[See README.md dedicated to memory allocation](https://github.com/ArcturusSky/holbertonschool-low_level_programming/tree/main/malloc_free/README.md)
+  - **Dynamic Memory Allocation:** [See README.md dedicated to memory allocation](https://github.com/ArcturusSky/holbertonschool-low_level_programming/tree/main/malloc_free/README.md)
 
 ## Pointers
 
@@ -37,12 +36,9 @@ This allows direct access to the variable's value by referencing its memory adre
 
 ### Why using pointers?:
 
-	**Efficiency:** Pointers allow direct access to memory adresses, enabling quicker read and write operations compared to accessing array elements through index calculations
+**Efficiency:** Pointers allow direct access to memory adresses, enabling quicker read and write operations compared to accessing array elements through index calculations
 
-- **Note:**
-
-	
-## 
+- **Note:** 
 
 
 - **Caracteristics:**
@@ -66,13 +62,11 @@ This allows direct access to the variable's value by referencing its memory adre
 
 ````c
 
-````
+```` 
 
+## Arrays
 
-
-## 
-
-### 
+## Strings
 
 
 ## Conclusion

@@ -3,6 +3,34 @@
 #include <stdlib.h>
 
 /**
+ * _strlen - Fonction permettant connaître la taill d'une string
+ * @s: string à compter
+ * Return: lengh
+ */
+
+int _strlen(char *s)
+{
+	int count;
+
+	count = 0;
+
+	while (*s != '\0')
+
+	/**
+	 * Permet de traverser le array vers lequel point s
+	 * "*s" désigne littéralement ce tableau je n'ai pas besoin de
+	 * de son adresse mémoire avec p = &s ou autre.
+	 */
+	{
+		count++;
+		s++;
+	}
+
+	return (count);
+}
+
+
+/**
  * _strcpy - Fonction qui sert à copier une string ailleurs
  * @dest: destination de la copie
  * @src: source de la copie
@@ -40,13 +68,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *copyowner;
 	dog_t *new_dog_instance;
 
-	copyname = malloc(sizeof(name));
+	copyname = malloc(_strlen(name) + 1);
 
 	if (copyname == NULL)
 	{
 		return (NULL);
 	}
-	copyowner = malloc(sizeof(owner));
+	copyowner = malloc(_strlen(owner) + 1);
 
 	if (copyowner == NULL)
 	{

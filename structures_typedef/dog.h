@@ -30,4 +30,9 @@ void print_dog(struct dog *d);
 	/**
 	 * Function that print a struct dog
 	 */
+
+dog_t *new_dog(char *name, float age, char *owner);
+	/**
+	 * Function that create a new dog.
+	 */
 #endif

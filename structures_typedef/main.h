@@ -316,10 +316,4 @@ int *array_range(int min, int max);
 	/**
 	 * Function that creates an array of integers.
 	 */
-
-void init_dog(struct dog *d, char *name, float age, char *owner);
-	/**
-	 * Function that initialize a variable of type `struct dog`
-	 */
-
 #endif

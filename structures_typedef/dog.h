@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef DOG_H
+#define DOG_H
 #include <stdio.h>
 /**
  * struct dog - Represent a dog basic attribute
@@ -16,5 +16,10 @@ struct dog
 	float age;		/** Float for dog's age */
 	char *owner;	/** String for dog's owner */
 };
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
+	/**
+	 * Function that initialize a variable of type `struct dog`
+	 */
 
 #endif

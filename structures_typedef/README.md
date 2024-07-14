@@ -9,7 +9,7 @@ Note : I will also update that README.md regarding new concepts I have to learn 
 - [Main subject of my README.md](#main-subject-of-my-readmemd)
 	- [Summary](#summary)
 	- [Glossary (in alphabetical order)](#glossary-in-alphabetical-order)
-	- [what are Structures?](#what-are-structures)
+	- [What are Structures?](#what-are-structures)
 	- [Creating a structure step by step](#creating-a-structure-step-by-step)
 		- [Step 1: Declaring a Structure and its Members](#step-1-declaring-a-structure-and-its-members)
 		- [Step 2: Initializing the Structure](#step-2-initializing-the-structure)
@@ -39,7 +39,7 @@ Note : I will also update that README.md regarding new concepts I have to learn 
   - **Typedef:** A **keyword** in C used to create **aliases** or new names for existing data types, including structures
   
 
-## what are Structures? 
+## What are Structures? 
 
 **Definition:** 
 A structure in C is like a library of data defined by the developper. It can contain and combined various types of data (char, int, unsigned int, etc) under a single name.

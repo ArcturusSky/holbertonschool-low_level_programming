@@ -1,7 +1,12 @@
-recursion/main.h.gch
-recursion/6-prime
-recursion/*-main.c
-argc_argv/nargs
-malloc_free/*-main.c
-more_malloc_free/_putchar.c
-more_malloc_free/*-main.c
+# Ignore Emacs buffer files
+*~
+*#
+
+# Ignore object files
+*.o
+
+# Ignore main files
+*-main.c
+
+# Ignore executable files
+*.out

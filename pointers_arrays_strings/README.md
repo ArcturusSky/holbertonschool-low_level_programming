@@ -76,7 +76,7 @@ This allows direct access to the variable's value by referencing its memory adre
   
 	Passing by "value" means that in our code when we give an [argument](https://github.com/ArcturusSky/holbertonschool-low_level_programming/blob/main/argc_argv/README.md)  to a function by just using its name (for exemple "num") it will create a COPY of it and only this copy will be altered. So if you go back to the main function (for exemple if you are using [recursion](https://github.com/ArcturusSky/holbertonschool-low_level_programming/tree/main/recursion/README.md)) only the copy would have been altered and using the variable name again will lead only to the use of the original value and not the altered one.
 
-		*Exemple:*
+*Exemple:*
 
 ````c
 #include <stdio.h>

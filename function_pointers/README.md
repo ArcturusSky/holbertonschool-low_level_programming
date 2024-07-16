@@ -1,5 +1,3 @@
-This README.md will hold the template I use for every README.md for each sub-repository.
-
 # Function pointers
 
 This repository is part of the `low-programming` parent repository focused on C programming. Here, I'm starting to learn and work with **function_pointers**. 

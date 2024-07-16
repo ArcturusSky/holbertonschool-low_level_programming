@@ -14,4 +14,7 @@ void array_iterator(int *array, size_t size, void (*action)(int));
 	 * parameter on each elements of an array
 	 */
 
+int int_index(int *array, int size, int (*cmp)(int));
+	/** Function that searches for an integer */
+
 #endif

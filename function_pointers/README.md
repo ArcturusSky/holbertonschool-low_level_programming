@@ -241,25 +241,41 @@ printf("Result: %d\n", result);
 ```c
 #include <stdio.h>
 
-int example_add_function(int a, int b) 
+/**
+ * example_add_function - Example add function
+ * @a: integer example
+ * @b: integer example
+ *
+ * Return: Sum a + b
+ */
+
+int example_add_function(int a, int b)
 {
-    return (a + b);
+	return (a + b);
 }
 
-int main() 
+/**
+ * main - entry point
+ *
+ * Return: 0
+ */
+
+int main(void)
 {
-    /** Declare a function pointer */
-    int (*function_pointer_example)(int, int);
-    
-    /** initialise the function pointer */
-    function_pointer_example = example_add_function;
-    
-    /** Use the function pointer to call the function */
-    int result = function_pointer_example(5, 3);
-    printf("Result: %d\n", result);
-    
-    return;
+	/** Declare a function pointer */
+	int (*function_pointer_example)(int, int);
+
+	/** initialise the function pointer */
+	function_pointer_example = example_add_function;
+
+	/** Use the function pointer to call the function */
+	int result = function_pointer_example(5, 3);
+
+	printf("Result: %d\n", result);
+
+	return (0);
 }
+
 ```
 
 **Explanation:**
@@ -288,45 +304,45 @@ Function pointers provdes flexibility and modularity in programming. They allow:
 /** Declare and initialise two simple functions: `add` and `substract` */
 int add(int a, int b) 
 {
-    return a + b;
+	return (a + b);
 }
 
 int subtract(int a, int b) 
 {
-    return a - b;
+	return (a - b);
 }
 
-int main() 
+int main(void)
 {
 	/** Declare a function pointer */
-    int (*operation)(int, int);
-    char op;
+	int (*operation)(int, int);
+	char op;
 
 	/** Ask the user for an input */
-    printf("Enter operation (+ or -): ");
-    scanf(" %c", &op); /** Read the user input */
+	printf("Enter operation (+ or -): ");
+	scanf(" %c", &op); /** Read the user input */
 
 	/** Select the appropriate function based on user input */
-    if (op == '+') 
-    {
-        operation = add; /** Assigned the `add` function to the function pointer */
-    } 
-    else if (op == '-') 
-    {
-        operation = subtract; /** Assisgned the `substract` function to the function pointer */
-    } 
-    else 
-    {
+	if (op == '+') 
+	{
+		operation = add; /** Assigned the `add` function to the function pointer */
+	} 
+	else if (op == '-') 
+	{
+		operation = subtract; /** Assisgned the `substract` function to the function pointer */
+	} 
+	else 
+	{
 		/** If an invalid operation is entered, print an error message and exit */
-        printf("Invalid operation\n");
-        return (1);
-    }
+		printf("Invalid operation\n");
+		return (1);
+	}
 
 	/** Use the function pointer to call the selected function */
-    int result = operation(10, 5); /** Call the function through the pointer */
-    printf("Result: %d\n", result); /** Print the result */
+	int result = operation(10, 5); /** Call the function through the pointer */
+	printf("Result: %d\n", result); /** Print the result */
 
-    return;
+	return (0);
 }
 
 ```
@@ -344,26 +360,40 @@ A **Callback Function** is a function that is passed as an argument to another f
 ```c Example: Callback Function
 #include <stdio.h>
 
-/** A simple function that will be used as a callback */
-void print_message() 
+/**
+ * print_message -  Example function that will be used as a callback
+ */
+
+void print_message(void)
 {
-    printf("This is a callback function.\n");
+	printf("This is a callback function.\n");
 }
 
-/** A function that takes another function as an argument (callback) */
-void execute_callback(void (*callback)()) 
+/**
+ * execute_callback -  An example function that takes another
+ * function as an argument (callback)
+ * @callback : callback
+ */
+
+void execute_callback(void (*callback)())
 {
-    printf("Before executing callback...\n");
-    callback();  /* Call the passed function */
-    printf("After executing callback...\n");
+	printf("Before executing callback...\n");
+	callback();  /* Call the passed function */
+	printf("After executing callback...\n");
 }
 
-int main() 
-{
-    /*  Pass the print_message function as a callback */
-    execute_callback(print_message);
+/**
+ * main - entry point
+ *
+ * Return: 0
+ */
 
-    return;
+int main(void)
+{
+	/*  Pass the print_message function as a callback */
+	execute_callback(print_message);
+
+	return (0);
 }
 
 ```
@@ -383,49 +413,68 @@ In this example, `print_message` is a simple function that prints a message. The
 #include <stdio.h>
 
 /** Define some simple functions */
-int add(int a, int b) {
-    return a + b;
-}
-
-int subtract(int a, int b) {
-    return a - b;
-}
-
-int multiply(int a, int b) {
-    return a * b;
-}
-
-int divide(int a, int b) {
-    if (b != 0) {
-        return a / b;
-    } else {
-        printf("Division by zero!\n");
-        return 0;
-    }
-}
-
-int main()
+int add(int a, int b)
 {
-    /** Declare an array of function pointers */
-    int (*operations[4])(int, int) = {add, subtract, multiply, divide};
+	return (a + b);
+}
 
-    /** Example usage of the function table */
-    int choice, a = 10, b = 5;
+int subtract(int a, int b)
+{
+	return (a - b);
+}
 
-    printf("Select operation: 0-Add, 1-Subtract, 2-Multiply, 3-Divide: ");
+int multiply(int a, int b)
+{
+	return (a * b);
+}
+
+int divide(int a, int b)
+{
+	if (b != 0)
+	{
+		return (a / b);
+
+	}
+	else
+	{
+		printf("Division by zero!\n");
+		return (0);
+	}
+}
+
+/**
+ * main - entry point
+ *
+ * Return: 0
+ */
+
+int main(void)
+{
+	/** Declare an array of function pointers */
+	int (*operations[4])(int, int) = {add, subtract, multiply, divide};
+
+	/** Example usage of the function table */
+	int choice, a = 10, b = 5;
+
+	printf("Select operation: 0-Add, 1-Subtract, 2-Multiply, 3-Divide: ");
 	/** Take the user input */
 	scanf("%d", &choice);
 
-    if (choice >= 0 && choice < 4) 
+	if (choice >= 0 && choice < 4)
 	{
-        int result = operations[choice](a, b);
-        printf("Result: %d\n", result);
-    } else {
-        printf("Invalid choice!\n");
-    }
+		int result = operations[choice](a, b);
 
-    return;
-}
+		printf("Result: %d\n", result);
+
+	}
+	else
+	{
+		printf("Invalid choice!\n");
+	}
+
+	return (0);
+	}
+
 
 ```
 
@@ -448,31 +497,44 @@ The user is prompted to select an operation, and the corresponding function is c
 
 #include <stdio.h>
 
-/** Define a structure with a function pointer */
+/**
+ * StructureName_Example - Example of a structure
+ *
+ * Description:  Define a structure with a function pointer
+ */
+
 struct StructureName_Example
-{ 
-	returnType (*FunctionPointerName_example)(argumentType1, argumentType2); /** Function pointer in the structure */
+{
+
+/** Function pointer in the structure */
+returnType (*FunctionPointerName_example)(argumentType1, argumentType2);
+
+	/** Define function that match the function pointer signature */
+	returnType Function1_Example(argumentType1 a, argumentType2 b)
+	{
+		/** Things you want your function to do */
+	}
+
+	returnType Function2_Example(argumentsType a, argumentType2 b)
+	{
+		/** Things you want your function to do */
+	}
 };
 
-/** Define function that match the function pointer signature */
-returnType Function1_Example (argumentType1 a, argumentType2 b)
+/**
+ * main - entry point
+ *
+ * Return: 0
+ */
+
+int main(void)
 {
-	/** Things you want your function to do */
-}
-
-returnType Function2_Example (argumentsType a, argumentType2 b)
-{ 
-	/** Things you want your function to do */
-}
-
-int main()
-{ 
 	struct StructureName_Example structInstanceName_Example; /** Declare a new instance of "StructureName_Exemple" to be used here */
 	char Example_choice; /** Just a given example */
 
 	/** Ask the user an Input */
 	printf("Enter choice (example: + or -): ");
-    scanf(" %c", &Example_choice); /** Read the choice from the user input */
+	scanf(" %c", &Example_choice); /** Read the choice from the user input */
 
 	/** Assign the appropriate function to the structure's function pointer based on the user input */
 	if (Example_choice == 'someCondition')
@@ -495,10 +557,12 @@ int main()
 	/** Use the function pointer in the structure to call the selected function */
 	ReturnType result = structInstanceName_Example.FunctionPointerName_Example(arg1, arg2);
 	/** Call the function through the structure */
-	printf("Result is: %d\n", result); /** Print the result (adjust format as needed) */
+	printf("Result is: %d\n", result);
+	/** Print the result (adjust format as needed) */
 
-	return;
+	return (0);
 }
+
 ``` 
 
 **Explanation:**

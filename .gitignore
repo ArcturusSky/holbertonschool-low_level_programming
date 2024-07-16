@@ -10,3 +10,5 @@
 
 # Ignore executable files
 *.out
+
+function_pointers/_putchar.c

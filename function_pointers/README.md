@@ -357,50 +357,62 @@ In this example, the function pointer `operation` is used to select between `add
 
 A **Callback Function** is a function that is passed as an argument to another function. This allows the called function to execute the **callback function** at a specific point withing its execution
 
-```c Example: Callback Function
+*Function that will be use by our callback*
+```c
 #include <stdio.h>
 
 /**
- * print_message -  Example function that will be used as a callback
- */
-
-void print_message(void)
-{
-	printf("This is a callback function.\n");
-}
-
-/**
- * execute_callback -  An example function that takes another
- * function as an argument (callback)
- * @callback : callback
- */
-
-void execute_callback(void (*callback)())
-{
-	printf("Before executing callback...\n");
-	callback();  /* Call the passed function */
-	printf("After executing callback...\n");
-}
-
-/**
- * main - entry point
+ * multiply_by_two - Multiplies a number by two
+ * @n: The number to be multiplied
  *
- * Return: 0
+ * Return: nothing
  */
-
+void multiply_by_two(int n)
+{
+    printf("The result is: %d\n", n * 2);
+}
+```
+*Prototype of the function that use a callback(use another function as a parameter)*
+```c 
+/**
+ * operate_on_number - Applies a function to a number
+ * @num: The number to operate on
+ * @f: The function to apply to the number
+ *
+ * Return: nothing
+ */
+void operate_on_number(int num, void (*f)(int))
+{
+    f(num);
+}
+```
+*Let's imagine it's our 1-main.c*
+```c 
 int main(void)
 {
-	/*  Pass the print_message function as a callback */
-	execute_callback(print_message);
+    int number = 5;
 
-	return (0);
+    operate_on_number(number, multiply_by_two);
+
+    return (0);
 }
-
 ```
+*Expected Outpout:*
+```c
+The result is: 10
+```
+
 
 **Explanation:**
 
-In this example, `print_message` is a simple function that prints a message. The `execute_callback` function takes a function pointer `*callback` as an argument and calls this function within its execution. In `main`, the `print_message` function is passed to `execute_callback` as a **callback.**
+- The `multiply_by_two` function takes an integer `n` and prints the result of multiplying `n` by 2.
+
+- The `operate_on_number` function takes an integer `num` and a function pointer f. It calls the function pointed to by `f` with `num` as the argument.
+
+- In the `main` function, we call `operate_on_number` with the integer `5` and the `multiply_by_two` function. 
+  
+  **This results in calling `multiply_by_two` with 5.**
+
 
 ### Example: Efficient Handling of Function Tables
 

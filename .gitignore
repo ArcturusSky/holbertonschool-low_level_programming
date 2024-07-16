@@ -11,4 +11,5 @@
 # Ignore executable files
 *.out
 
+test_*
 function_pointers/_putchar.c

@@ -21,55 +21,105 @@ Note : I will also update that README.md regarding new concepts I have to learn 
 
 **A**
   - **Name:** 
+
 **B**
+
   - **Name:** 
+
 **C**
+
   - **Name:** 
+
 **D**
+
   - **Name:** 
+
 **E**
+
   - **Name:** 
+
 **F**  
+
   - **Name:** 
+
 **G**  
+
   - **Name:** 
+
 **H**  
+
   - **Name:** 
+
 **I**  
+
   - **Name:** 
+
 **J**
+
   - **Name:** 
+
 **K**
+
   - **Name:** 
+
 **L**
+
   - **Name:** 
+
 **M**
+
   - **Name:** 
+
 **N**
+
   - **Name:** 
+
 **O**  
+
   - **Name:** 
+
 **P**  
+
   - **Name:** 
+
 **Q**  
+
   - **Name:** 
+
 **R**  
+
   - **Name:**
+
 **S**
+
   - **Name:** 
+
 **T**
+
   - **Name:** 
+
 **U**
+
   - **Name:** 
+
 **V**
+
   - **Name:** 
+
 **W**
+
   - **Name:** 
+
 **X**  
+
   - **Name:** 
+
 **Y**  
+
   - **Name:** 
+
 **Z**  
+
   - **Name:**  
 
 ## Rank 2 Title (Key concept)

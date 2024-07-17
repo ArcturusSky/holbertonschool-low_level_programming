@@ -1,4 +1,4 @@
-This README.md will hold the template I use for every README.md for each sub-repository.
+This README.md will hold the template I used for every README.md for each directory.
 
 # Main subject of my README.md
 

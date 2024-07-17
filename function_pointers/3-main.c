@@ -29,23 +29,17 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	printf("op est : %s\n", op);
-	printf("num1 est : %d\n", num1);
-	
-
 	fonctionop = get_op_func(op);
-
-	printf("num2 est : %d\n", num2);
 
 	if (fonctionop == NULL)
 	{
-		printf("Error99\n");
+		printf("Error\n");
 		exit(99);
 	}
 
 	if (num2 == 0 && (strcmp(op, "/") == 0 || strcmp(op, "%") == 0))
 	{
-		printf("Error100\n");
+		printf("Error\n");
 		exit(100);
 	}
 

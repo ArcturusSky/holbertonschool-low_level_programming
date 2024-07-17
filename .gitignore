@@ -11,5 +11,17 @@
 # Ignore executable files
 *.out
 
+# Ignore every test
 test_*
+
 function_pointers/_putchar.c
+
+# Exception
+
+!function_pointers/3-main.c
+function_pointers/function_pointers.h
+function_pointers/3-op_functions.c
+function_pointers/3-main.c
+function_pointers/3-get_op_func.c
+function_pointers/3-calc.h
+function_pointers/function_pointers.h

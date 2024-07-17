@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef FUNCTIONPOINTERS_H
+#define FUNCTIONPOINTERS_H
 #include <stddef.h>
 
 int _putchar(char c);

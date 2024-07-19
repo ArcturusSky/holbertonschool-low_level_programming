@@ -346,7 +346,7 @@ Then using `va_list` and all its macro one by one.
 
   1. Declare a `va_list` variable:
 
-	This variable will be used to access the variable arguments. (it will hold them)
+This variable will be used to access the variable arguments. (it will hold them)
 
 ```c
 va_list example_va_list_name;

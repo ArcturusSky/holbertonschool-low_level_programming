@@ -59,7 +59,7 @@ Note : I will also update that README.md regarding new concepts I have to learn 
 
 **V**
 
-  - **`va_arg`:** Function **macro** - accesses the next variadic function argument
+  - **`va_arg`:** Function **macro** - Go to the next variadic function argument EACH TIME it's used.
 
   - **`va_copy`:** Function **macro** - Makes a copy of the content of a `va_list` to another.
 
@@ -368,11 +368,15 @@ This **macro** accessed to the next argument in the list.
 
 It takes two **parameters**: the `va_list` variable and the type of the next argument.
 
+**WARNING:** `va_arg` go to the next argument EACH time it's been used. So if in a loop you want to test an element and if not printing that element by calling "va_arg" twice to do "if va arg(example) ==" else "printf(va_arg(exemple))" it will move to one argument EACH time.
+
+**Tips:** stop va_arg element you want in a temporary variable
+
 ```c
 type argument = va_arg(example_va_list_name, type);
 ```
 
-  4. Clean up with `va_end`:
+  1. Clean up with `va_end`:
 
 This **macro** cleans up the `va_list` variabl. It should be called **before** the function returns.
 

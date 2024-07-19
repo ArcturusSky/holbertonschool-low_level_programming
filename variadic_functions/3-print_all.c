@@ -38,13 +38,13 @@ void print_all(const char * const format, ...)
 				TestString = va_arg(PrintAnything, char *);
 				if (TestString == NULL)
 				{
-					flagTESTSeparator = 0;
 					printf("(nil)");
 					break;
 				}
 				printf("%s", TestString);
 				break;
 			default:
+				flagTESTSeparator = 0;
 				break;
 		}
 		index++;

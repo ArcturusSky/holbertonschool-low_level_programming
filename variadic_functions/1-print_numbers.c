@@ -16,18 +16,23 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_start(PrintNUMBERSlist, n);
 
+
 	while (index != n)
 	{
 		if (separator == NULL)
 		{
 			printf("%d", va_arg(PrintNUMBERSlist, unsigned int));
+			index++;
 		}
 
-		printf("%d", va_arg(PrintNUMBERSlist, unsigned int));
-		index++;
-		if (index != n)
+		else
 		{
-			printf("%s", separator);
+			printf("%d", va_arg(PrintNUMBERSlist, unsigned int));
+			index++;
+			if (index != n)
+			{
+				printf("%s", separator);
+			}
 		}
 
 	}

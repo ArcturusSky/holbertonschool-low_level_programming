@@ -17,7 +17,7 @@ void print_all(const char * const format, ...)
 	int flagTESTSeparator = 0;
 
 	va_start(PrintAnything, format);
-	while (format[index] != '\0')
+while (format && format[index])
 	{
 		switch (format[index])
 		{
@@ -53,5 +53,6 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		}
 	}
+	va_end(PrintAnything);
 	printf("\n");
 }

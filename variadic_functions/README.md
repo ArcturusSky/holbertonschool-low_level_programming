@@ -14,7 +14,7 @@ Note : I will also update that README.md regarding new concepts I have to learn 
 		- [Different types of Macro](#different-types-of-macro)
 	- [Variadic Functions](#variadic-functions)
 		- [What is `va_list` and its macros?](#what-is-va_list-and-its-macros)
-		- [And so: how to use a variadic function?](#and-so-how-to-use-a-variadic-function)
+		- [And so, how to use a variadic function?](#and-so-how-to-use-a-variadic-function)
 	- [`const` Type Qualifier](#const-type-qualifier)
 		- [Constant Variables](#constant-variables)
 		- [Pointer to Constant Variable](#pointer-to-constant-variable)
@@ -352,7 +352,7 @@ This variable will be used to access the variable arguments. (it will hold them)
 va_list example_va_list_name;
 ```
 
-  2. Iniitialize the `va_list` variable with `va_start`:
+  2. Initialize the `va_list` variable with `va_start`:
 
 	This **macro** initilizes the `va_list` variable to point to the first argument in the variable argument list.
 
@@ -364,9 +364,9 @@ va_start(example_va_list_name, last_known_argument_name);
 
   3. Accessing each arguments using `va_arg`:
    
-	This **macro** accessed to the next argument in the list.
+This **macro** accessed to the next argument in the list.
 
-	It takes two **parameters**: the `va_list` variable and the type of the next argument.
+It takes two **parameters**: the `va_list` variable and the type of the next argument.
 
 ```c
 type argument = va_arg(example_va_list_name, type);
@@ -374,13 +374,13 @@ type argument = va_arg(example_va_list_name, type);
 
   4. Clean up with `va_end`:
 
-	This **macro** cleans up the `va_list` variabl. It should be called **before** the function returns.
+This **macro** cleans up the `va_list` variabl. It should be called **before** the function returns.
 
 ```c
 va_end(example_va_list_name);
 ```
 
-### And so: how to use a variadic function?
+### And so, how to use a variadic function?
 
 **variadic function** takes at **least** one fixed argument (which will give the **data type** of the argument and a **name**) and then any number of arguments can be passed with an **ellipsis** `...` as last parameters.
 
@@ -440,7 +440,7 @@ int AddNumbers(int number_of_arg, ...)
 /** Output: No input yet, it return just the Sum in 'return' */
 ```
 
-And then it's being used in any given code for any reason.
+And then your variadic functions is being used in any given code for any reason.
 
 *Example (part 3):*
 

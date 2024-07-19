@@ -6,4 +6,7 @@
 int sum_them_all(const unsigned int n, ...);
 /** Function that returns the summ of all its parameters */
 
+void print_numbers(const char *separator, const unsigned int n, ...);
+/** Function that prints numbers, followed by a new line. */
+
 #endif

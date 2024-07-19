@@ -22,7 +22,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			TestString = va_arg(PrintWORDSlist, char*);
 			if (TestString == NULL)
 			{
-				printf("(nill)");
+				printf("(nil)");
 			}
 			else
 			{
@@ -35,7 +35,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			TestString = va_arg(PrintWORDSlist, char*);
 			if (TestString == NULL)
 			{
-				printf("(nill)");
+				printf("(nil)");
 			}
 			else
 			{

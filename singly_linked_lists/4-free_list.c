@@ -8,5 +8,13 @@
 
 void free_list(list_t *head)
 {
-	free(head);
+	list_t *currentNode = head;
+	list_t *tempNode;
+
+	while (currentNode != NULL)
+	{
+		tempNode = currentNode->next; /** Save the next node */
+		free(currentNode); /** Free the current node */
+		currentNode = tempNode; /** Move to the next node */
+	}
 }

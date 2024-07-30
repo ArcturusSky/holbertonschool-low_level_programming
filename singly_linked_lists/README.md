@@ -19,7 +19,8 @@ Note : I will also update that README.md regarding new concepts I have to learn 
 		- [Linked List Structure](#linked-list-structure-1)
 		- [Adding a node at the beginning of a singly Linked List](#adding-a-node-at-the-beginning-of-a-singly-linked-list)
 		- [Adding a node at the end of a singly Linked List](#adding-a-node-at-the-end-of-a-singly-linked-list)
-		- [Removing an Element (a Node) to a Linked List](#removing-an-element-a-node-to-a-linked-list)
+		- [Removing a note at the begenning of a singly Linked List](#removing-a-note-at-the-begenning-of-a-singly-linked-list)
+		- [Removing a node at the end of a singly linked list](#removing-a-node-at-the-end-of-a-singly-linked-list)
 		- [Traversing a Linked List](#traversing-a-linked-list)
 	- [Conclusion](#conclusion)
 	- [Author](#author)
@@ -433,7 +434,7 @@ Adding elements to the beginning of a linked list is efficient with a **time com
 
    **2. Create a new Node using the function `createNode`:**
 
-	- Create a new node with the specified data and assigns its address to `newNode`, allowing us to use this pointer to manipulate the newly created node in the linked list.
+- Create a new node with the specified data and assigns its address to `newNode`, allowing us to use this pointer to manipulate the newly created node in the linked list.
 
    **3. Check if the List is Empty:**
 
@@ -604,9 +605,106 @@ Since in the `createNode` function we stated that `next_node` pointed to `NULL` 
 
 Adding a node at the end of a linked list is a common operation when building or modifying a list. This operation ensures that new data is apprended in the correct sequence. The time complexity of this operaion is **O(n)**, where `n` is the number of nodes in the list, due to the need to traverse the list to find the end.
 
-### Removing an Element (a Node) to a Linked List
+### Removing a note at the begenning of a singly Linked List
 
 **Objective:** Remove a specific node from the beginning of a singly linked list.
+
+**Detailed steps:**
+
+   1. **Check if the list is emmpty:**
+
+      - Before attempting to remove a node, ensure the list is not empty. If the head pointer is `NULL`, the list is empty, and there's nothing to remove.
+
+   2. **Store the node to be removed:**
+
+   	- Use a **TEMPORARY POINTER** to keep track of the node that will be removed. This pointer is needed to properly free the memory of the node.
+
+   3. **Update the Head Pointer:**
+      
+      - Set the **Head pointer** to the next node in the list. This step effectively removes the first node from the list.
+
+   4. **Free the Head Pointer:**
+
+   	- After updating the **head pointer**, free the memory allocated for the removed node. **WARNING: This step is crucial to avoid memory leaks.**
+
+*Example (with full explanation below)*
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+/** Function to remove the first element from the beginning of the linked list */
+void removeElement(Linked_List_Node **head) 
+{
+    /** Step 1: Check if the list is empty */
+    if (*head == NULL) 
+	{
+        /** List is empty, nothing to remove */
+        printf("The list is empty. No node to remove.\n");
+        return;
+    }
+
+    /** Step 2: Store the node to be removed */
+    Linked_List_Node *nodeToRemove = *head; /** The current head node */
+
+    /** Step 3: Update the head pointer to the next node */
+    *head = nodeToRemove->next_node; /** The head now points to the second node in the list */
+
+    /** Step 4: Free the memory of the removed node */
+    free(nodeToRemove); /** Release the memory allocated for the removed node */
+}
+
+```
+**Explanation of the code**
+
+1. **Check for Empty List:**
+
+```c
+/** Step 1: Check if the list is empty */
+if (*head == NULL) 
+{
+	/** List is empty, nothing to remove */
+	printf("The list is empty. No node to remove.\n");
+	return;
+}
+```
+
+This condition checks if the list is empty. If the **`head`** pointer is `NULL`, there are no nodes in the list to remove.
+
+2. **Store the Node to be removed:**
+
+```c
+/** Step 2: Store the node to be removed */
+Linked_List_Node *nodeToRemove = *head; /** The current head node */
+```
+
+A temporary pointer `nodeToRemove` is used to keep track of the node that will be removed. This is necessary to later free the memory allocated for this node.
+
+3. **Update the Head Pointer:**
+
+```c
+/** Step 3: Update the head pointer to the next node */
+*head = nodeToRemove->next_node; /** The head now points to the second node in the list */
+```
+
+The **`head`** pointer is updated to point to the next node in the list. By doing this, the original head node is effectively removed from the list.
+
+4. **Free the Memory:**
+
+```c
+/** Step 4: Free the memory of the removed node */
+free(nodeToRemove); /** Release the memory allocated for the removed node */
+```
+
+The `free` function releases the memory allocated for the removed node, which prevents memorys leaks and ensures efficient memory usage.
+
+**Why remove from the Beginning?**
+
+Removing nodes from the beginning of a singly linked list is efficient with a **time complexity of O(1)**. This is because it involves only a few pointer adjustements and memory deallocations, making it a quick operation. This approach is commonly used when maintaining the order of nodes or performing frequent insertions and deletions.
+
+### Removing a node at the end of a singly linked list
+
+**Objective:** Remove a specific node from the end of a singly linked list.
 
 **Detailed steps:**
 

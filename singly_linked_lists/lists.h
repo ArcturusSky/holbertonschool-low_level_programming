@@ -34,4 +34,8 @@ int _strlen(char *s);
 
 list_t *add_node_end(list_t **head, const char *str);
 	/** Function that add a not at the end of a list_t */
+
+void free_list(list_t *head);
+	/** Function that frees a `list_t` list */
+
 #endif

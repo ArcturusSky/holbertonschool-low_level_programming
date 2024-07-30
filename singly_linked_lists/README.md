@@ -235,10 +235,10 @@ A  typical link list has the following components:
   
   2. **Node:** The basic unit of a linked list, which includes:
   	
-	- **Data Field:** Store the data or value.
+- **Data Field:** Store the data or value.
 
-	- **Next Pointer:** A reference to the next node in the list.
-			*Note: In a singly linked list, this is a **single pointer**. While in a **doubly linked** list, there is an additional pointer to the previous node.* 
+- **Next Pointer:** A reference to the next node in the list.
+	*Note: In a singly linked list, this is a **single pointer**. While in a **doubly linked** list, there is an additional pointer to the previous node.* 
   
   3. **Tail Node:** In some linked lists, particularly in **circular lists**, the nail node points back to the **head node** forming a loop.
 

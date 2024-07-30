@@ -50,9 +50,21 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	newNode->str = strdup(str); /** Set the value of the new node */
-	newNode->len = _strlen(str); /** Set the len in length */
+	Duplicate_of_str = strdup(str); /** Duplicate str into duplicate_string */
+	newNode->str = Duplicate_of_str;
+	/** Set the duplicate string into the str data in the new node  */
+	newNode->len = _strlen(Duplicate_of_str);
+	/** Set the lenght into the len data in the new node  */
+
+	if (head == NULL) /** Case 1: empty list */
+	{
+		*head = newNode; /** New node become the head and only node */
+		newNode->next = NULL; /** Since only node, next is NULL */
+	}
+	else /** Case 2: not empty list */
+	{
 	newNode->next = *head; /** Set the next node pointer to head */
+	}
 
 	*head = newNode;
 	/** Update the head pointer to point to the new node and become de header  */

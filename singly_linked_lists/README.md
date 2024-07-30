@@ -235,44 +235,47 @@ A  typical link list has the following components:
   
   2. **Node:** The basic unit of a linked list, which includes:
   	
-- **Data Field:** Store the data or value.
+  - **Data Field:** Store the data or value.
 
-- **Next Pointer:** A reference to the next node in the list.
+  - **Next Pointer:** A reference to the next node in the list.
 	*Note: In a singly linked list, this is a **single pointer**. While in a **doubly linked** list, there is an additional pointer to the previous node.* 
-  
-  3. **Tail Node:** In some linked lists, particularly in **circular lists**, the nail node points back to the **head node** forming a loop.
+
+  -  **Tail Node:** In some linked lists, particularly in **circular lists**, the nail node points back to the **head node** forming a loop.
+
+
+
 
 ### Types of Linked Lists
 
   1. **Singly Linked List:**
 
-	- **Structure:** Each node contains a `data_value` and a `next_pointer`.
-	
-	- **Traversal:** Can be traverses in a single direction (from **Head** to end).
+- **Structure:** Each node contains a `data_value` and a `next_pointer`.
+
+- **Traversal:** Can be traverses in a single direction (from **Head** to end).
 	
 	*Example scheme:*
 ```css
 Head → [Data|Next] → [Data|Next] → [Data|NULL]
 ```
 
-  2. **Doubly Linked List:**
+  1. **Doubly Linked List:**
 
-	- **Structure:** Each node contains a `data_value` and a `next_pointer`, and a `previous_pointer`.
-	
-	- **Traversal:** Can be traverses in borth directions (forward and backward).
+- **Structure:** Each node contains a `data_value` and a `next_pointer`, and a `previous_pointer`.
+
+- **Traversal:** Can be traverses in borth directions (forward and backward).
 
 	*Example scheme:*
 ```css
 Head ← [Prev|Data|Next] ↔ [Prev|Data|Next] ↔ [Prev|Data|NULL]
 ```
 
-  3. **Circular Linked List**
+  1. **Circular Linked List**
    
-   - **Structure:** The last node's `next_pointer` points back to the **head** node, forming a circular structure.
-   
-   - **Types:** Can be singly circular or doubly circular.
+- **Structure:** The last node's `next_pointer` points back to the **head** node, forming a circular structure.
 
-	*Example schem (singly circular, but it's the same for a double):*
+- **Types:** Can be singly circular or doubly circular.
+
+*Example scheme (singly circular, but it's the same for a double):*
 ```css
 Head → [Data|Next] → [Data|Next] → [Data|Head]
 ```

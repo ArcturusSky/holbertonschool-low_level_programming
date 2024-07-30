@@ -13,6 +13,7 @@
 
 # Ignore every test
 test_*
+*-test
 
 function_pointers/_putchar.c
 

@@ -828,25 +828,25 @@ Removing nodes from the end of a linked list is essential for efficient memory m
 
 **Detailed Steps:**
 
-   1. **Check if the list is empty:**
+1. **Check if the list is empty:**
 
-	- Ensure the list is not empty before startint the traversal. If the **head** pointer is `NULL`, there are no nodes to traverse.
-  
-  2. **Initialize a temporary pointer:**
-	
-	-  Use a temporary pointer to iterate through the list. Start this pointer at the **head** of the list.
-  
-  3. **Iterate through the list:**
-	
-	- Move through each node using the `next_node` pointer until reaching the end of the list (when the `next_node` is `NULL`).
-  
-  4. **Perform actions on each node:**
+- Ensure the list is not empty before startint the traversal. If the **head** pointer is `NULL`, there are no nodes to traverse.
 
-	- During traversal, you can perform various actions, such as printing node values or processing data.
-  
-  5. **End of traversal:**
+1. **Initialize a temporary pointer:**
 
-	- Once the end of the list is reached, stop the traversal.
+-  Use a temporary pointer to iterate through the list. Start this pointer at the **head** of the list.
+
+2. **Iterate through the list:**
+
+- Move through each node using the `next_node` pointer until reaching the end of the list (when the `next_node` is `NULL`).
+
+3. **Perform actions on each node:**
+
+- During traversal, you can perform various actions, such as printing node values or processing data.
+
+4. **End of traversal:**
+
+- Once the end of the list is reached, stop the traversal.
 
 *Full example (with explanation)*
 

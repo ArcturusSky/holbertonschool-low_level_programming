@@ -32,5 +32,6 @@ list_t *add_node(list_t **head, const char *str);
 int _strlen(char *s);
 	/** Utilitary function to count the size of a string*/
 
-
+list_t *add_node_end(list_t **head, const char *str);
+	/** Function that add a not at the end of a list_t */
 #endif

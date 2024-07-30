@@ -49,11 +49,9 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	/** Duplicate str*/
-	Duplicate_of_str = strdup(str);
 
-	newNode->str = Duplicate_of_str; /** Set the value of the new node */
-	newNode->len = _strlen(Duplicate_of_str); /** Set the len in length */
+	newNode->str = strdup(str); /** Set the value of the new node */
+	newNode->len = _strlen(str); /** Set the len in length */
 	newNode->next = *head; /** Set the next node pointer to head */
 
 	*head = newNode;

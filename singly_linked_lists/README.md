@@ -433,8 +433,8 @@ Adding elements to the beginning of a linked list is efficient with a **time com
    - Set the value of the new node to the value you want to add to the list. Set the `next_node pointer` of the new node to point to the **current head** of the list. This step links the new node to the existing list.
 
    **2. Create a new Node using the function `createNode`:**
-
-- Create a new node with the specified data and assigns its address to `newNode`, allowing us to use this pointer to manipulate the newly created node in the linked list.
+   
+   - Create a new node with the specified data and assigns its address to `newNode`, allowing us to use this pointer to manipulate the newly created node in the linked list.
 
    **3. Check if the List is Empty:**
 

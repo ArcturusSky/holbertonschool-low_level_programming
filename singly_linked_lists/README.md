@@ -258,7 +258,7 @@ A  typical link list has the following components:
 Head → [Data|Next] → [Data|Next] → [Data|NULL]
 ```
 
-  1. **Doubly Linked List:**
+  2. **Doubly Linked List:**
 
 - **Structure:** Each node contains a `data_value` and a `next_pointer`, and a `previous_pointer`.
 
@@ -269,7 +269,7 @@ Head → [Data|Next] → [Data|Next] → [Data|NULL]
 Head ← [Prev|Data|Next] ↔ [Prev|Data|Next] ↔ [Prev|Data|NULL]
 ```
 
-  1. **Circular Linked List**
+  3. **Circular Linked List**
    
 - **Structure:** The last node's `next_pointer` points back to the **head** node, forming a circular structure.
 

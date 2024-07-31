@@ -2,7 +2,7 @@
 #define LISTS_H
 #include <stdio.h>
 
-#define EMPTYLIST
+#define EMPTY_LIST_RETURN_NULL
 (
 	/ if (h == NULL)
 	/ {

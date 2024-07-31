@@ -1,0 +1,1 @@
+Doubled linked lists already covered in [this README.md](https://github.com/ArcturusSky/holbertonschool-low_level_programming/blob/main/singly_linked_lists/README.md)

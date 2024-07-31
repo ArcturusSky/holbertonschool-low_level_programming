@@ -36,4 +36,7 @@ void free_dlistint(dlistint_t *head);
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 	/** Funtion that returns the "nth" node of a doubly linked list. */
 
+int sum_dlistint(dlistint_t *head);
+	/** Function that returns the sum of all "n" data of a doubly linked list. */
+
 #endif

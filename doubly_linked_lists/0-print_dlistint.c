@@ -18,12 +18,12 @@ size_t print_dlistint(const dlistint_t *h)
 	}
 	else
 	{
-	const list_t *currentNode = h;
+	const dlistint_t *currentNode = h; 
 		while (currentNode != NULL)
 		{
-			if (currentNode->n == NULL)
+			if (currentNode->n == '\0')
 			{
-				printf("");
+				printf("(nil)");
 				count++;
 				currentNode = currentNode->next;
 			}

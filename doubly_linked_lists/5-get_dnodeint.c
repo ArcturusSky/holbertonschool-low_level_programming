@@ -21,7 +21,11 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	{
 
 	dlistint_t *currentNode = head;
-										/** Set a temporary node to hold the head pointer to traverse */
+
+	if (increasing_index == index)		/** means index is 0 then return head */
+	{
+		return (currentNode);
+	}									/** Set a temporary node to hold the head pointer to traverse */
 	while (currentNode->next != NULL)
 										/** Iterrate until While not reaching index  or null */
 	{

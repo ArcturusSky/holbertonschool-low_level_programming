@@ -13,7 +13,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int increasing_index = 0;	/**Set a temporary index to keep track */
 
-	if (index == 0 || head == NULL)
+	if (head == NULL)
 	{
 		return (NULL);					/** return an error */
 	}

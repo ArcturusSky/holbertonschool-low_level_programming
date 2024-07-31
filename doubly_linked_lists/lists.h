@@ -30,4 +30,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 	/** Function that adds a new node at the end of a doubly linked list. */
 
+void free_dlistint(dlistint_t *head);
+	/** Function that frees a doubly linked list */
+
 #endif

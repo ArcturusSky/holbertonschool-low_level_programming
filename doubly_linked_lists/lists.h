@@ -39,4 +39,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 int sum_dlistint(dlistint_t *head);
 	/** Function that returns the sum of all "n" data of a doubly linked list. */
 
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
+	/** Function that inserts a new node at a given position */
+
 #endif

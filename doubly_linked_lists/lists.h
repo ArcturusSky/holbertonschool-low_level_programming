@@ -2,13 +2,6 @@
 #define LISTS_H
 #include <stdio.h>
 
-#define EMPTY_LIST_RETURN_NULL
-(
-	/ if (h == NULL)
-	/ {
-	/	return (NULL);					/** return an error */
-	/ }
-)
 /**
  * struct dlistint_s - doubly linked list
  * @n: integer

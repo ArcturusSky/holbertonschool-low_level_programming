@@ -27,13 +27,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	else
 	{
-		while (currentNode->next != NULL)	/** Iterrate */
+		while (currentNode != NULL)	/** Iterrate */
 		{
 			Temporary_Prev_Node = currentNode;
 			currentNode = currentNode->next;
 			increasing_index++;
 			if (increasing_index == idx)
 			{
+				if (currentNode->next == NULL)
+				{
+					return (add_dnodeint_end(&*h, n));
+				}
 				New_Node = malloc(sizeof(dlistint_t));
 					if (New_Node)
 					{
@@ -44,8 +48,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				New_Node->next = currentNode;
 				return (New_Node);			/** If index found return current Node */
 			}
-		}								/** Set a temporary node to hold the head pointer to traverse */
+		}
 	}
 
-	return (add_dnodeint_end(&*h, n));
+	return (NULL);
 }

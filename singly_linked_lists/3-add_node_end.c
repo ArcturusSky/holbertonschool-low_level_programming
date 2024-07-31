@@ -50,18 +50,16 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 	Duplicate_string = strdup(str); /** Duplicate str into duplicate_string */
-
 	if (Duplicate_string == NULL)
 	{
-			free(newNode);
-				/** Free the node if string duplication fails */
-			return (NULL);
+		free(newNode);
+			/** Free the node if string duplication fails */
+		return (NULL);
 	}
 		newNode->str = Duplicate_string;
 		/** Set the duplicate string into the str data in the new node  */
 		newNode->len = _strlen(Duplicate_string);
 		/** Set the lenght into the len data in the new node  */
-
 		newNode->next = NULL; /** since adding at the end, next node is NULL */
 	}
 	if (*head == NULL) /** Case 1: empty list */
@@ -79,6 +77,5 @@ list_t *add_node_end(list_t **head, const char *str)
 		}
 	currentNode->next = newNode; /** when reached setting newNode */
 	}
-
 return (newNode);
 }

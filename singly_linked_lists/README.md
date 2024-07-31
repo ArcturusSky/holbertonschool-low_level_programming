@@ -1014,6 +1014,7 @@ The key difference is the `prev_node` pointer in the doubly linked list, which a
       	- **At the End:**
         	- **Singly Linked List:** Traverse to the end and update the last node's `next_node` to the new node. Set the new node's `next_node` to `NULL`.
         	- **Doubly Linked List:** Traverse to the end, update the last node's `next_node` to the new node, set the new node's `prev_node` to the last node, and the new node's `next_node` to `NULL`
+
 	- **Removing a Node:**
     	- **At the Beginning:**
         	- **Singly Linked List:** Update the head to point to the seconde node. 

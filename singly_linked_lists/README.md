@@ -14,14 +14,18 @@ Note : I will also update that README.md regarding new concepts I have to learn 
 		- [Data structures and types](#data-structures-and-types)
 	- [Array Data Structure](#array-data-structure)
 	- [Linked List](#linked-list)
-	- [Linked List Structure](#linked-list-structure)
+	- [Singly Linked List Structure](#singly-linked-list-structure)
 		- [Types of Linked Lists](#types-of-linked-lists)
-		- [Linked List Structure](#linked-list-structure-1)
+		- [Linked List Structure](#linked-list-structure)
 		- [Adding a node at the beginning of a singly Linked List](#adding-a-node-at-the-beginning-of-a-singly-linked-list)
 		- [Adding a node at the end of a singly Linked List](#adding-a-node-at-the-end-of-a-singly-linked-list)
 		- [Removing a note at the begenning of a singly Linked List](#removing-a-note-at-the-begenning-of-a-singly-linked-list)
 		- [Removing a node at the end of a singly linked list](#removing-a-node-at-the-end-of-a-singly-linked-list)
 		- [Traversing a Linked List](#traversing-a-linked-list)
+	- [Doubly linked list](#doubly-linked-list)
+		- [Similarities between Singly and Doubly linked list](#similarities-between-singly-and-doubly-linked-list)
+		- [Differences between Singly and Doubly linked list](#differences-between-singly-and-doubly-linked-list)
+		- [Example Code for Doubly Linked List](#example-code-for-doubly-linked-list)
 	- [Conclusion](#conclusion)
 	- [Author](#author)
 
@@ -199,7 +203,7 @@ The primary advantage of linked lists over arrays is their dynamic nature. They 
 
 **Dynamic Memory Allocation:** Useful in scenarios where the number of elements is not known in advance or varies frequently.
 
-## Linked List Structure
+## Singly Linked List Structure
 
 A  typical link list has the following components:
 
@@ -955,6 +959,119 @@ After exiting the loop, print `NULL` to indicate the end of the list.
 **Why Traverse a List?**
 
 Traversing a linked list is essential for various operations, such as displaying the list's contents, searching for specific values, or performing calculations based on node data. The **time complexity is O(n)**, where `n` is the number of nodes in the list. This operation is linear in nature, as each nnode must be visited once.
+
+
+## Doubly linked list
+
+The main difference between a singly linked list and a doubly linked list is the addition of a `previous_node` pointer in the doubly linked list. This additional pointer allows traversal in both directions: forward and backward.
+
+### Similarities between Singly and Doubly linked list
+
+1. **Basic Operations:**
+   
+	- Adding, removing, and traversing nodes involved similar steps in both types of lists. You still need to handle pointers carefully to maintain the integrity of the list.
+  
+2. **Node Creation and Deletion:**
+   
+   - The logic of creating and deleting nodes remains similar. Memory managements (allocation and deallocation) is essential in both cases.
+
+3. **Iterative Operations:**
+   
+   - In both lists, you iterate through nodes using pointers. The traversal logic changes slightly due to the presence of the `prev_node` in doubly linked lists. 
+
+### Differences between Singly and Doubly linked list
+
+1. **Structure Definition:**
+	
+	- **Singly Linked List**
+	
+```c
+typedef struct Linked_List_Node
+{
+	int data							/** Data store in the node */
+	struct Linked_List_Node *next_node; /** Pointer to the next node */
+} Linked_List_Node;
+```
+	
+   - **Doubly Linked List**
+  
+```c
+typedef struct Doubly_Linked_List_Node
+{
+	int data 									/** Data stored in the node */
+	struct Doubly_Linked_List_Node *next_node; 	/** Pointer to the next node */
+	struct Doubly_Linked_List_Node *prev_node;	/** Pointer to the previous node */
+} Doubly_Linked_List_Node;
+```
+The key difference is the `prev_node` pointer in the doubly linked list, which allows the list to be traversed backward.
+
+2. **Operations:**
+
+	- **Adding a Node:**
+    	- **At the Beginning:**
+        	- **Singly Linked List:** Update the head to point to the new node and set the new node's  `next_node` to the previous head.
+        	- **Doubly Linked List:** Update the head to point to the new node, set the new node's `next_node` to the previous head, and update the previous head's `prev_node` to the new node. Also, set the new node's `prev_node` to `NULL`
+      	- **At the End:**
+        	- **Singly Linked List:** Traverse to the end and update the last node's `next_node` to the new node. Set the new node's `next_node` to `NULL`.
+        	- **Doubly Linked List:** Traverse to the end, update the last node's `next_node` to the new node, set the new node's `prev_node` to the last node, and the new node's `next_node` to `NULL`
+	- **Removing a Node:**
+    	- **At the Beginning:**
+        	- **Singly Linked List:** Update the head to point to the seconde node. 
+        	- **Doubly Linked List:** Update the head to point to the second node, set the new head's `prev_node` to `NULL`, and **free** the old head. 
+      	- **At the End:**
+        	- **Singly Linked List:** Traverse to the **Penultimate** node, set its `next_node` to `NULL`
+        	- **Doubly Linked List:** Traverse to the **Penultimate** node, set its `next_node` to `NULL`, and the last node's `prev_node` to the **Penultimate** node. 
+
+3. **Traversal:**
+   
+   - **Singly Linked List:** Only forward traversal is possible.
+   
+   - **Doubly Linked List:** Both forward and backward traversal are possible, thanks to the `prev_node` pointer. 
+
+### Example Code for Doubly Linked List
+
+Here is a breakdown of how you might handle a simple operation, like adding a node at the end, in a doubly linked list:
+
+1. **Create and Initialiaze the New Node:**
+
+```c
+Doubly_Linked_List_Node *newNode = malloc(sizeof(Doubly_Linked_List_Node));
+newNode->data = value;		 	/** Set node data */
+newNode->next_node = NULL;	 	/** End of list */
+newNode->prev_node = NULL;		/** Will be updated later */
+```
+
+2. **Traverse to the End:**
+   
+```c
+Doubly_Linked_List_Node *current = head;
+		/** Initialize a temporary pointer to the head of the list */
+
+		/** Iterate through the list until reaching the last node */
+while (current->next_node != NULL)	
+		/** Continue while the next node is not NULL */
+{
+    current = current->next_node;
+		/** Move the temporary pointer to the next node */
+}
+
+		/** At this point, 'current' points to the last node of the list */
+```
+
+3. **Update Pointers:**
+
+```c
+current->next_node = newNode; /** Update the old last node */
+newNode->prev_node = current; /** Update new node's previous pointer */
+```
+4. **Update the Head (if needed):**
+
+Only necessary if the list was empty initially and the new node becomes the head.
+
+**Conclusion**
+
+   - **Doubly Linked List** adds a `prev_node` pointer for bidirectional traversal, but operations like adding and removing nodes are similar, with added complexity in maintaining both `next_node` and `prev_node` pointers.
+   - **Singly Linked List** is simpler, with only a `next_node` pointer, making it easier to implement but less versatil in terms of traversal an operations.
 
 ## Conclusion
 

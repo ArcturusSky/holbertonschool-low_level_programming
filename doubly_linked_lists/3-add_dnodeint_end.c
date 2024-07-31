@@ -25,12 +25,12 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		if (*head == NULL)
 
 		{
+			*head = New_Node;
+								/** New node become the head and only node */
 			New_Node->n = n;
 			New_Node->prev = NULL;
 			New_Node->next = NULL;
 								/** Since only node, prev and next are NULL */
-			*head = New_Node;
-								/** New node become the head and only node */
 		}
 
 		/** Case 2: not empty list */

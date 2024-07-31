@@ -37,7 +37,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	/** Case 2: not empty list */
 	else
 	{
-		head->prev = *New_Node;
+		(*head)->prev = New_Node;
 				/** Set the head prev node to new node */
 		New_Node->next = *head;
 				/** Set the next node pointer to head */

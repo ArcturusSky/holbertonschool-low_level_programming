@@ -19,9 +19,12 @@ typedef struct dlistint_s
 } dlistint_t;
 
 size_t print_dlistint(const dlistint_t *h);
-	/** Function that prints all elements of a doubly linked lists */
+	/** Function that prints all elements of a doubly linked list */
 
 size_t dlistint_len(const dlistint_t *h);
-	/** Function that counts all elements of a doubly linked lists */
+	/** Function that counts all elements of a doubly linked list */
+
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
+	/** Function that adds a new node at the beginning of a doubly linked list. */
 
 #endif

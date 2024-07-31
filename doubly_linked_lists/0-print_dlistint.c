@@ -18,7 +18,7 @@ size_t print_dlistint(const dlistint_t *h)
 	}
 	else
 	{
-	const dlistint_t *currentNode = h; 
+	const dlistint_t *currentNode = h;
 		while (currentNode != NULL)
 		{
 			if (currentNode->n == '\0')

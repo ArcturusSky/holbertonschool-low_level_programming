@@ -18,37 +18,34 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *Temporary_Prev_Node;
 
 	if (h == NULL)
-	{
-	return (NULL);					/** return an error */
-	}
-	if (increasing_index == idx)		/** means index is 0 then return head */
-	{
+		return (NULL);					/** return an error */
+
+	if (idx == 0)		/** means index is 0 then return head */
 		return (add_dnodeint(&*h, n));
-	}
-	else
+
+	while (currentNode != NULL)	/** Iterrate */
 	{
-		while (currentNode != NULL)	/** Iterrate */
+		Temporary_Prev_Node = currentNode;
+		currentNode = currentNode->next;
+		increasing_index++;
+		if (increasing_index == idx)
 		{
-			Temporary_Prev_Node = currentNode;
-			currentNode = currentNode->next;
-			increasing_index++;
-			if (increasing_index == idx)
+			if (currentNode->next == NULL)
 			{
-				if (currentNode->next == NULL)
-				{
-					return (add_dnodeint_end(&*h, n));
-				}
-				New_Node = malloc(sizeof(dlistint_t));
-					if (New_Node)
-					{
-						return (NULL);
-					}
-				New_Node->n = n;
-				New_Node->prev = Temporary_Prev_Node;
-				New_Node->next = currentNode;
-				return (New_Node);			/** If index found return current Node */
+				return (add_dnodeint_end(&*h, n));
 			}
-		}
+			New_Node = malloc(sizeof(dlistint_t));
+			if (New_Node == NULL)
+			{
+				return (NULL);
+			}
+			New_Node->n = n;
+			New_Node->prev = Temporary_Prev_Node;
+			New_Node->next = currentNode;
+			Temporary_Prev_Node->next = New_Node;
+			currentNode->prev = New_Node;
+			return (New_Node);			/** If index found return current Node */
+			}
 	}
 
 	return (NULL);

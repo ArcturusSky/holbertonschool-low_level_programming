@@ -15,21 +15,20 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int increasing_index = 0;	/**Set a temporary index to keep track */
 	dlistint_t *currentNode = *h;
 	dlistint_t *New_Node;
-	dlistint_t *Temporary_Prev_Node;
+	dlistint_t *Temporary_Prev_Node = NULL;
 
 	if (h == NULL)	/* Check for invalid head pointer */
 		return (NULL);
-
 	if (idx == 0)	/* Special case: Inserting at the head */
 		return (add_dnodeint(h, n));
 
-	while (currentNode != NULL) /* Traverse the list to find the insertion point */
+	while (currentNode != NULL) /* Traverse list to find the insertion point */
 	{
 		if (increasing_index == idx)
 		{
 			/** Special case: Inserting at the end of the list */
 			if (currentNode->next == NULL)
-				return (add_dnodeint_end(&*h, n));
+				return (add_dnodeint_end(h, n));
 
 			/** Allocate memory for new node */
 			New_Node = malloc(sizeof(dlistint_t));
@@ -43,8 +42,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			Temporary_Prev_Node->next = New_Node;
 			currentNode->prev = New_Node;
 
-			/** If index found return current Node */
-			return (New_Node);
+			return (New_Node);	/** If index found return current Node */
 			}
 
 		/** Move to the next node */

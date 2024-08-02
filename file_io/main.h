@@ -313,8 +313,9 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 	 */
 
 int *array_range(int min, int max);
-	/**
-	 * Function that creates an array of integers.
-	 */
+	/**Function that creates an array of integers. */
+
+ssize_t read_textfile(const char *filename, size_t letters);
+	/** Function that reads a text file and prints it to the POSIX std output */
 
 #endif

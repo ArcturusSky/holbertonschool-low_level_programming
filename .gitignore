@@ -16,8 +16,11 @@ test_*
 *-test
 test-*
 
+# Ignore specific files
 function_pointers/_putchar.c
+file_io/_putchar.c
 
-# Exception
+# Exception to no ignore
 
 !function_pointers/3-main.c
+

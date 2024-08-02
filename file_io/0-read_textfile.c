@@ -1,55 +1,55 @@
 #include <fcntl.h>   /** Includes definitions for file control operations */
 #include <unistd.h>  /** Includes definitions for POSIX constants and types */
-#include <stdio.h>   /** Includes definitions for standard I/O operations */
-#include <stdlib.h> /** Includes definitions for mem management operations */
+#include <stdlib.h>  /** Includes definitions for mem management operations */
 
 /**
- * read_textfile - Function that reads a text and print it
- * @filename: where to print
- * @letters: number of letters it should read and print
+ * read_textfile - Function that reads a text file and prints it
+ * @filename: The name of the file to read
+ * @letters: The number of letters to read and print
  *
- * Return: size char to read and print
+ * Return: The actual number of letters it could read and print
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fileDescriptor;
 	char *buffer;
-	ssize_t bytes_to_read, bytes_written;
+	ssize_t bytes_read, bytes_written, tot_w;
 
-	if (filename == NULL)
+	if (filename == NULL || letters == 0)
 		return (0);
-
-	buffer = malloc(letters);
+	buffer = malloc(letters); /** Allocate buffer to hold the content */
 	if (buffer == NULL)
 		return (0);
-
-	fileDescriptor = open(filename, O_RDONLY);
-
+	fileDescriptor = open(filename, O_RDONLY);	/** Open the file */
 	if (fileDescriptor < 0)
 	{
 		free(buffer);
 		return (0);
 	}
-
-	bytes_to_read = read(fileDescriptor, buffer, sizeof((buffer)));
-	if (bytes_to_read < 0)
+	bytes_read = read(fileDescriptor, buffer, letters);	/** Read from the file */
+	if (bytes_read < 0)
 	{
 		close(fileDescriptor);
 		free(buffer);
 		return (0);
 	}
-
-	bytes_written = write(STDOUT_FILENO, buffer, bytes_to_read);
-	if (bytes_written < 0)
+	tot_w = 0; /** Write to the standard output */
+	while (tot_w < bytes_read)
 	{
-		close(fileDescriptor);
-		free(buffer);
-		return (0);
+		bytes_written = write(STDOUT_FILENO, buffer + tot_w, bytes_read - tot_w);
+		if (bytes_written < 0)
+		{
+			close(fileDescriptor);
+			free(buffer);
+			return (0);
+		}
+		tot_w += bytes_written;
 	}
 
+	/**Clean up */
 	close(fileDescriptor);
 	free(buffer);
 
-	return (bytes_written);
+	return (tot_w);
 }

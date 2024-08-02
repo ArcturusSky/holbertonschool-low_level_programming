@@ -130,7 +130,7 @@ A file descriptor is an integer handle used by the operating system to manage op
     
 	- Used for readin incoming data (*example:* keyboard input).
   
-  - **Standard Output (stdout):** File descriptor** `1`** (`STDOUT_FILENO`).
+  - **Standard Output (stdout):** File descriptor **`1`** (`STDOUT_FILENO`).
     
 	- Used for writing output data (*example:* displaying text on the screen).
   
@@ -139,9 +139,10 @@ A file descriptor is an integer handle used by the operating system to manage op
 	- Used for outputting error messages (*exemple:* program error messages).
 
 **Why use them?**
+
 File descriptors are essential for performing file operations in Unix_like systems, providing a way to interact with files and other I/O resources.
 
-***Analogy:** Imagine, you have a mailbox with three different drawers:
+**Analogy:** Imagine, you have a mailbox with three different drawers:
 	
   - One drawer for incoming letters **(stdin)**
   - One drawer for outgoing letters **(stout)**
@@ -186,9 +187,11 @@ int main()
 ### `open`
 
 **Definition:**
+
 The **`open`** system call is used to **open a file** and returns a **file descriptor**, which is a unique integer used to identify the fil in subsequent operations.
 
 **Why use it?**
+
 You us **`open`** tp either create a new file or access an existing file. It provides a file descriptor that allows you to perform various operations on the file, such as reading or writing.
 
 **Template:**

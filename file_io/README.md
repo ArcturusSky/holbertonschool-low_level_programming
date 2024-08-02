@@ -20,9 +20,9 @@ Note : I will also update that README.md regarding new concepts I have to learn 
 		- [(advanced) Strategies for Reading Data When Size is Unknown](#advanced-strategies-for-reading-data-when-size-is-unknown)
 		- [`write`](#write)
 	- [Higher-Level File I/O Functions](#higher-level-file-io-functions)
-		- [**`fopen`**](#fopen)
-		- [**`fread`**](#fread)
-		- [**`fwrite`**](#fwrite)
+		- [`fopen`](#fopen)
+		- [`fread`](#fread)
+		- [`fwrite`](#fwrite)
 	- [Conclusion](#conclusion)
 	- [Author](#author)
 
@@ -149,21 +149,21 @@ Here's a simple example in C to illustrate the use of file descriptors:
 
 ```c
 #include <stdio.h>
-#include <unistd.h>  				/** Includes definitions for file descriptors */
+#include <unistd.h> /** Includes definitions for file descriptors */
 
 int main() 
 {
 	/** Write a message to standard output (stdout) */
 	const char *message = "Hello, here is a message on stdout!\n";
-	write(1, message, 34);			/** 1 is the file descriptor for stdout containing 34 char*/
+	write(1, message, 34); /** 1 is the file descriptor for stdout containing 34 char*/
 
 	/** Read a character from standard input (stdin) */
 	char c;
-	read(0, &c, 1);					/** 0 is the file descriptor for stdin */
+	read(0, &c, 1); /** 0 is the file descriptor for stdin */
 
 	/** Write a message to standard error (stderr) */
 	const char *error_message = "This is an error message on stderr!\n";
-	write(2, error_message, 36);	/** 2 is the file descriptor for stderr */
+	write(2, error_message, 36); /** 2 is the file descriptor for stderr */
 
 return (0);
 }
@@ -193,7 +193,7 @@ Flags can be combined using the bitwise **OR** operator (**`|`**). This allows f
 
 ### Reminder: File permissions
 
-|-----------------------------------------------------------------------------------|
+
 | Octal Value | Binary | Owner (User) | Group | Others | Description				|
 |-------------|--------|--------------|-------|--------|----------------------------|
 | **`0`**	  | `000`  | ---		  | ---	  | ---	   | No permissions				|
@@ -204,7 +204,6 @@ Flags can be combined using the bitwise **OR** operator (**`|`**). This allows f
 | **`5`**	  | `101`  | ---		  | r--	  | --x	   | Read and execute			|
 | **`6`**	  | `110`  | ---		  | rw-	  | ---	   | Read and write				|
 | **`7`**	  | `111`  | ---		  | rwx	  | rwx	   | Read, write, and execute	|
-|-----------------------------------------------------------------------------------|
 
 ### Combined Permissions
 
@@ -270,21 +269,22 @@ int open(const char *pathname, int flags, mode_t mode);
 Here's an example of using `open` to open a file name `"file.text"`:
 
 ```c
-#include <fcntl.h>  /** Includes definitions for file control operations */
+#include <fcntl.h> /** Includes definitions for file control operations */
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>  /** Includes definitions for POSIX constants and types */
+#include <unistd.h> /** Includes definitions for POSIX constants and types */
 
-int main() {
+int main()
+{
 	/** Open "file.txt" for reading and writing, create if it does not exist, and truncate it to zero length if it exists */
 	int fileDescriptor = open("file.txt", O_RDWR | O_CREAT | O_TRUNC, 0666);
 
 	/** Check if the file was opened successfully */
-	if (fileDescriptor < 0) {
-		
+	if (fileDescriptor < 0)
+	{
 		/** Handle the error */
 		perror("Error opening file");
-		return 1;
+		return (1);
 	}
 
 	/** File operations can be performed here */
@@ -292,14 +292,14 @@ int main() {
 	/** Close the file descriptor */
 	close(fileDescriptor);
 
-	return 0;
+	return (0);
 }
 
 ```
 
 **Explanation:**
 
-  - open("file.txt", O_RDWR | O_CREAT | O_TRUNC, 0666);
+  - **`open("file.txt", O_RDWR | O_CREAT | O_TRUNC, 0666);`**
 
 	- **`O_RDWR`:** Open the file for both reading and writing
 	- **`0_CREAT`:** Create the file if it doesn't exist.
@@ -414,7 +414,7 @@ int main(void)
 	if (fileDescriptor < 0) 
 	{
 		perror("Error opening file");
-		return (-1);				/** Return -1 to indicate an error occurred */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
 	/** Buffer to store the read data */
@@ -425,8 +425,8 @@ int main(void)
 	if (bytesRead < 0) 
 	{
 		perror("Error reading file");
-		close(fileDescriptor);  	/** Close the file descriptor */
-		return (-1);				/** Return -1 to indicate an error occurred */
+		close(fileDescriptor); /** Close the file descriptor */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
 	/** Print the data read from the file */
@@ -435,7 +435,7 @@ int main(void)
 	/** Close the file descriptor */
 	close(fileDescriptor);
 
-	return (0);						/** Return 0 to indicate success */
+	return (0); /** Return 0 to indicate success */
 }
 
 ```
@@ -450,9 +450,9 @@ int main(void)
 	 - You can read data in chunks of a fixed size (*example: 1024 bytes*) and then process or store it incrementally. This is useful when you’re dealing with large files or streams where you don’t know the total size. 
 
 ```c
-#include <fcntl.h>						/** Includes definitions for file control operations */
-#include <unistd.h>						/** Includes definitions for POSIX constants and types */
-#include <stdio.h>						/** Includes definitions for standard I/O operations */
+#include <fcntl.h> /** Includes definitions for file control operations */
+#include <unistd.h> /** Includes definitions for POSIX constants and types */
+#include <stdio.h> /** Includes definitions for standard I/O operations */
 
 /**
  * main - Opens a file, reads it in chunks, and prints the content to stdout.
@@ -461,36 +461,36 @@ int main(void)
  */
 int main(void)
 {
-	int fileDescriptor;					/** File descriptor for the opened file */
-	char buffer[1024];					/** Buffer to store data read from the file */
-	ssize_t bytesRead;					/** Number of bytes read from the file */
+	int fileDescriptor; /** File descriptor for the opened file */
+	char buffer[1024]; /** Buffer to store data read from the file */
+	ssize_t bytesRead; /** Number of bytes read from the file */
 
-										/**Open "file.txt" for reading only */
+	/**Open "file.txt" for reading only */
 	fileDescriptor = open("file.txt", O_RDONLY);
 	if (fileDescriptor < 0)
 	{
-		perror("Error opening file");	/** Print error message if opening fails */
-		return (-1);					/**Return -1 to indicate an error occurred */
+		perror("Error opening file"); /** Print error message if opening fails */
+		return (-1); /**Return -1 to indicate an error occurred */
 	}
 
-										/** Read data from the file in chunks and print to stdout */
+	/** Read data from the file in chunks and print to stdout */
 	while ((bytesRead = read(fileDescriptor, buffer, sizeof(buffer))) > 0)
 	{
-										/** Write the data read to stdout */
+		/** Write the data read to stdout */
 		write(STDOUT_FILENO, buffer, bytesRead);
 	}
 
 	if (bytesRead < 0)
 	{
-		perror("Error reading file");	/** Print error message if reading fails */
-		close(fileDescriptor);			/** Close the file descriptor */
-		return (-1);					/** Return -1 to indicate an error occurred */
+		perror("Error reading file"); /** Print error message if reading fails */
+		close(fileDescriptor); /** Close the file descriptor */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-										/** Close the file descriptor */
+	/** Close the file descriptor */
 	close(fileDescriptor);
 
-	return (0);							/** Return 0 to indicate success */
+	return (0); /** Return 0 to indicate success */
 }
 ```
 
@@ -499,9 +499,9 @@ int main(void)
 	 - You can keep reading until read returns 0, indicating the end of the file. This method is common for reading text files where the end-of-file is a natural stopping point.
 
 ```c
-#include <fcntl.h>						/** Includes definitions for file control operations */
-#include <unistd.h>						/** Includes definitions for POSIX constants and types */
-#include <stdio.h>						/** Includes definitions for standard I/O operations */
+#include <fcntl.h> /** Includes definitions for file control operations */
+#include <unistd.h> /** Includes definitions for POSIX constants and types */
+#include <stdio.h> /** Includes definitions for standard I/O operations */
 
 /**
  * main - Opens a file, reads until EOF, and prints the content to stdout.
@@ -510,36 +510,36 @@ int main(void)
  */
 int main(void)
 {
-	int fileDescriptor;					/** File descriptor for the opened file */
-	char buffer[256];					/** Buffer to store data read from the file */
-	ssize_t bytesRead;					/** Number of bytes read from the file */
+	int fileDescriptor; /** File descriptor for the opened file */
+	char buffer[256]; /** Buffer to store data read from the file */
+	ssize_t bytesRead; /** Number of bytes read from the file */
 
 	/** Open "file.txt" for reading only */
 	fileDescriptor = open("file.txt", O_RDONLY);
 	if (fileDescriptor < 0)
 	{
-		perror("Error opening file");	/** Print error message if opening fails */
-		return (-1);					/** Return -1 to indicate an error occurred */
+		perror("Error opening file"); /** Print error message if opening fails */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
 	/** Read data from the file until EOF and print to stdout */
 	while ((bytesRead = read(fileDescriptor, buffer, sizeof(buffer))) > 0)
 	{
-										/** Write the data read to stdout */
+		/** Write the data read to stdout */
 		write(STDOUT_FILENO, buffer, bytesRead);
 	}
 
 	if (bytesRead < 0)
 	{
-		perror("Error reading file");	/** Print error message if reading fails */
-		close(fileDescriptor);			/** Close the file descriptor */
-		return (-1);					/** Return -1 to indicate an error occurred */
+		perror("Error reading file"); /** Print error message if reading fails */
+		close(fileDescriptor); /** Close the file descriptor */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-										/** Close the file descriptor */
+	/** Close the file descriptor */
 	close(fileDescriptor);
 
-	return (0);							/** Return 0 to indicate success */
+	return (0); /** Return 0 to indicate success */
 }
 
 ```
@@ -548,11 +548,11 @@ int main(void)
 	  - Start with a small buffer and dynamically resize it as needed. This method is useful if you expect to handle varying amounts of data but want to start with a manageable size. 
 
 ```c
-#include <fcntl.h> 								/** Includes definitions for file control operations */
-#include <unistd.h>								/** Includes definitions for POSIX constants and types */
-#include <stdio.h>								/** Includes definitions for standard I/O operations */
-#include <stdlib.h>								/** Includes definitions for memory allocation functions */
-#include <string.h>								/** Includes definitions for string manipulation functions */
+#include <fcntl.h> /** Includes definitions for file control operations */
+#include <unistd.h> /** Includes definitions for POSIX constants and types */
+#include <stdio.h> /** Includes definitions for standard I/O operations */
+#include <stdlib.h> /** Includes definitions for memory allocation functions */
+#include <string.h> /** Includes definitions for string manipulation functions */
 
 /**
  * main - Opens a file, reads it dynamically, and prints the content to stdout.
@@ -561,12 +561,12 @@ int main(void)
  */
 int main(void)
 {
-	int fileDescriptor;							/** File descriptor for the opened file */
-	char *buffer;								/** Pointer to dynamically allocated buffer */
-	size_t bufferSize;							/** Current size of the buffer */
-	ssize_t bytesRead;							/** Number of bytes read from the file */
-	size_t totalBytesRead;						/** Total number of bytes read */
-	char *newBuffer;							/** Pointer to new buffer when resizing */
+	int fileDescriptor; /** File descriptor for the opened file */
+	char *buffer; /** Pointer to dynamically allocated buffer */
+	size_t bufferSize; /** Current size of the buffer */
+	ssize_t bytesRead; /** Number of bytes read from the file */
+	size_t totalBytesRead; /** Total number of bytes read */
+	char *newBuffer; /** Pointer to new buffer when resizing */
 
 	/** Initial buffer size */
 	bufferSize = 256;
@@ -575,60 +575,60 @@ int main(void)
 	buffer = malloc(bufferSize);
 	if (buffer == NULL)
 	{
-		perror("Error allocating buffer");		/** Print error message if allocation fails */
-		return (-1);							/** Return -1 to indicate an error occurred */
+		perror("Error allocating buffer"); /** Print error message if allocation fails */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-												/** Open "file.txt" for reading only */
+	/** Open "file.txt" for reading only */
 	fileDescriptor = open("file.txt", O_RDONLY);
 	if (fileDescriptor < 0)
 	{
-		perror("Error opening file");			/** Print error message if opening fails */
-		free(buffer);							/** Free allocated buffer */
-		return (-1);							/** Return -1 to indicate an error occurred */
+		perror("Error opening file"); /** Print error message if opening fails */
+		free(buffer); /** Free allocated buffer */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
 	totalBytesRead = 0;
 
-												/** Read data from the file dynamically */
+	/** Read data from the file dynamically */
 	while ((bytesRead = read(fileDescriptor, buffer + totalBytesRead, bufferSize - totalBytesRead)) > 0)
 	{
-		totalBytesRead += bytesRead;			/** Update total bytes read */
+		totalBytesRead += bytesRead; /** Update total bytes read */
 		
-												/** Check if buffer needs resizing */
+		/** Check if buffer needs resizing */
 		if (totalBytesRead == bufferSize)
 		{
 			bufferSize *= 2;					/** Double the buffer size */
 			newBuffer = realloc(buffer, bufferSize);
 			if (newBuffer == NULL)
 			{
-				perror("Error reallocating buffer");	/** Print error message if reallocation fails */
-				free(buffer);					/** Free allocated buffer */
-				close(fileDescriptor);			/** Close the file descriptor */
-				return (-1);					/** Return -1 to indicate an error occurred */
+				perror("Error reallocating buffer"); /** Print error message if reallocation fails */
+				free(buffer); /** Free allocated buffer */
+				close(fileDescriptor); /** Close the file descriptor */
+				return (-1); /** Return -1 to indicate an error occurred */
 			}
-			buffer = newBuffer;					/** Update buffer pointer */
+			buffer = newBuffer; /** Update buffer pointer */
 		}
 	}
 
 	if (bytesRead < 0)
 	{
-		perror("Error reading file");			/** Print error message if reading fails */
-		free(buffer);							/** Free allocated buffer */
-		close(fileDescriptor);					/** Close the file descriptor */
-		return (-1);							/** Return -1 to indicate an error occurred */
+		perror("Error reading file"); /** Print error message if reading fails */
+		free(buffer); /** Free allocated buffer */
+		close(fileDescriptor); /** Close the file descriptor */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-												/** Print the data read from the file */
+	/** Print the data read from the file */
 	write(STDOUT_FILENO, buffer, totalBytesRead);
 
-												/** Free the dynamically allocated buffer */
+	/** Free the dynamically allocated buffer */
 	free(buffer);
 
-												/** Close the file descriptor */
+	/** Close the file descriptor */
 	close(fileDescriptor);
 
-	return (0);									/** Return 0 to indicate success */
+	return (0); /** Return 0 to indicate success */
 }
 ```
 
@@ -663,10 +663,10 @@ ssize_t write(int fd, const void *buf, size_t count);
 Here's a simple example demonstration how to use **`write`** to write to a file:
 
 ```c
-#include <fcntl.h>							/** Includes definitions for file control operations */
-#include <unistd.h>							/** Includes definitions for POSIX constants and types */
-#include <stdio.h>							/** Includes definitions for standard I/O operations */
-#include <string.h>							/** Includes definitions for string manipulation functions */
+#include <fcntl.h> /** Includes definitions for file control operations */
+#include <unistd.h> /** Includes definitions for POSIX constants and types */
+#include <stdio.h> /** Includes definitions for standard I/O operations */
+#include <string.h> /** Includes definitions for string manipulation functions */
 
 /**
  * main - Opens a file, writes data to it, and then closes the file.
@@ -675,31 +675,31 @@ Here's a simple example demonstration how to use **`write`** to write to a file:
  */
 int main(void)
 {
-	int fileDescriptor;						/** File descriptor for the opened file */
-	const char *data = "Hello, World!";		/** Data to be written to the file */
-	ssize_t bytesWritten;					/** Number of bytes written to the file */
+	int fileDescriptor; /** File descriptor for the opened file */
+	const char *data = "Hello, World!"; /** Data to be written to the file */
+	ssize_t bytesWritten; /** Number of bytes written to the file */
 
-											/** Open "file.txt" for writing only. Create it if it does not exist. */
+	/** Open "file.txt" for writing only. Create it if it does not exist. */
 	fileDescriptor = open("file.txt", O_WRONLY | O_CREAT | O_TRUNC, 0666);
 	if (fileDescriptor < 0)
 	{
-		perror("Error opening file");		/** Print error message if opening fails */
-		return (-1);						/** Return -1 to indicate an error occurred */
+		perror("Error opening file"); /** Print error message if opening fails */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
 	/** Write data to the file */
 	bytesWritten = write(fileDescriptor, data, strlen(data));
 	if (bytesWritten < 0)
 	{
-		perror("Error writing to file");	/** Print error message if writing fails */
-		close(fileDescriptor);				/** Close the file descriptor */
-		return (-1);						/** Return -1 to indicate an error occurred */
+		perror("Error writing to file"); /** Print error message if writing fails */
+		close(fileDescriptor); /** Close the file descriptor */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-											/** Close the file descriptor */
+	/** Close the file descriptor */
 	close(fileDescriptor);
 
-	return (0);								/** Return 0 to indicate success */
+	return (0); /** Return 0 to indicate success */
 }
 
 
@@ -725,7 +725,7 @@ int main(void)
 
 ## Higher-Level File I/O Functions
 
-### **`fopen`**
+### `fopen`
 
 **Definition:**
 
@@ -763,27 +763,27 @@ FILE *fopen(const char *filename, const char *mode);
  */
 int main(void)
 {
-	FILE *filePointer;					/** Pointer to the file stream */
+	FILE *filePointer; /** Pointer to the file stream */
 
-										/** Open "example.txt" for writing. Create it if it does not exist. */
+	/** Open "example.txt" for writing. Create it if it does not exist. */
 	filePointer = fopen("example.txt", "w");
 	if (filePointer == NULL)
 	{
-		perror("Error opening file");	/** Print error message if opening fails */
-		return (-1);					/** Return -1 to indicate an error occurred */
+		perror("Error opening file"); /** Print error message if opening fails */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-										/** File is now open and ready for writing */
+	/** File is now open and ready for writing */
 
-										/** Close the file stream */
+	/** Close the file stream */
 	fclose(filePointer);
 
-	return (0);							/** Return 0 to indicate success */
+	return (0); /** Return 0 to indicate success */
 }
 
 ```
 
-### **`fread`**
+### `fread`
 
 **Definition:**
 
@@ -823,40 +823,40 @@ size_t fread(void *pointer_to_buffer, size_t size, size_t count, FILE *stream);
  */
 int main(void)
 {
-	FILE *filePointer;						/** Pointer to the file stream */
-	char buffer[100];						/** Buffer to store data read from the file */
-	size_t bytesRead;						/** Number of bytes read */
+	FILE *filePointer; /** Pointer to the file stream */
+	char buffer[100]; /** Buffer to store data read from the file */
+	size_t bytesRead; /** Number of bytes read */
 
-											/** Open "example.txt" for reading. */
+	/** Open "example.txt" for reading. */
 	filePointer = fopen("example.txt", "r");
 	if (filePointer == NULL)
 	{
-		perror("Error opening file");		/** Print error message if opening fails */
-		return (-1);						/** Return -1 to indicate an error occurred */
+		perror("Error opening file"); /** Print error message if opening fails */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-											/** Read data from the file into buffer */
+	/** Read data from the file into buffer */
 	bytesRead = fread(buffer, sizeof(char), sizeof(buffer) - 1, filePointer);
 	if (bytesRead < 0)
 	{
-		perror("Error reading from file");	/** Print error message if reading fails */
-		fclose(filePointer);				/** Close the file stream */
-		return (-1);						/** Return -1 to indicate an error occurred */
+		perror("Error reading from file"); /** Print error message if reading fails */
+		fclose(filePointer); /** Close the file stream */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-											/** Null-terminate the buffer and print the data */
+	/** Null-terminate the buffer and print the data */
 	buffer[bytesRead] = '\0';
 	printf("Data read: %s\n", buffer);
 
-											/** Close the file stream */
+	/** Close the file stream */
 	fclose(filePointer);
 
-	return (0);								/** Return 0 to indicate success */
+	return (0);	/** Return 0 to indicate success */
 }
 
 ```
 
-### **`fwrite`**
+### `fwrite`
 
 **Definition:**
 
@@ -896,31 +896,31 @@ size_t fwrite(const void *pointer_to_data_to_write, size_t size, size_t count, F
  */
 int main(void)
 {
-	FILE *filePointer;						/** Pointer to the file stream */
-	const char *data = "Hello, fwrite!";	/** Data to be written */
-	size_t bytesWritten;					/** Number of bytes written */
+	FILE *filePointer; /** Pointer to the file stream */
+	const char *data = "Hello, fwrite!"; /** Data to be written */
+	size_t bytesWritten; /** Number of bytes written */
 
-											/** Open "example.txt" for writing. */
+	/** Open "example.txt" for writing. */
 	filePointer = fopen("example.txt", "w");
 	if (filePointer == NULL)
 	{
-		perror("Error opening file");		/** Print error message if opening fails */
-		return (-1);						/** Return -1 to indicate an error occurred */
+		perror("Error opening file"); /** Print error message if opening fails */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-											/** Write data to the file */
+	/** Write data to the file */
 	bytesWritten = fwrite(data, sizeof(char), strlen(data), filePointer);
 	if (bytesWritten < strlen(data))
 	{
-		perror("Error writing to file");	/** Print error message if writing fails */
-		fclose(filePointer);				/** Close the file stream */
-		return (-1);						/** Return -1 to indicate an error occurred */
+		perror("Error writing to file"); /** Print error message if writing fails */
+		fclose(filePointer); /** Close the file stream */
+		return (-1); /** Return -1 to indicate an error occurred */
 	}
 
-											/** Close the file stream */
+	/** Close the file stream */
 	fclose(filePointer);
 
-	return (0);								/** Return 0 to indicate success */
+	return (0); /** Return 0 to indicate success */
 }
 
 ```

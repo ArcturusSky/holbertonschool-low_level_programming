@@ -318,4 +318,33 @@ int *array_range(int min, int max);
 ssize_t read_textfile(const char *filename, size_t letters);
 	/** Function that reads a text file and prints it to the POSIX std output */
 
+int create_file(const char *filename, char *text_content);
+	/** Function to create a file */
+
+static int close_file_free_buff_return_0(int file_d, char *buf, int returnval);
+	/** Function to shorten close file, free buff and return 0 */
+
+/** Part to try to lighten my code  */
+
+#define BUFFER_SIZE 1024
+#define FILE_DESCRIPTOR 0
+
+/**
+ * close_file_free_buff_return_0 - Function to handle error
+ * @file_d: file to close
+ * @buf: temporary buffer to free
+ * @returnval: value to return since it can vary
+ *
+ * Return: returnval
+ */
+
+static int close_file_free_buff_return_0(int file_d, char *buf, int returnval)
+{
+	close(file_d);
+	free(buf);
+	return (0);
+}
+
+
+
 #endif

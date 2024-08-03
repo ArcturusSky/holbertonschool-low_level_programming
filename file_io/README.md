@@ -240,7 +240,7 @@ The **`open`** system call is used to **open a file** and returns a **file descr
 
 **Why use it?**
 
-You us **`open`** tp either create a new file or access an existing file. It provides a file descriptor that allows you to perform various operations on the file, such as reading or writing.
+You use **`open`** tp either create a new file or access an existing file. It provides a file descriptor that allows you to perform various operations on the file, such as reading or writing.
 
 **Template:**
 

@@ -4,6 +4,33 @@
 #include "main.h"
 
 /**
+ * _strlen - Function to count a string lenght
+ * @s: string to count
+ * Return: lengh
+ */
+
+int _strlen(char *s)
+{
+	int count;
+
+	count = 0;
+
+	while (*s != '\0')
+
+		/**
+		* Allows to traverse the array to which point s
+		* "*s" literally designates this array I do not need
+		* its memory address with p = &s or other.
+		*/
+	{
+		count++;
+		s++;
+	}
+
+	return (count);
+}
+
+/**
  * create_file - Function that creates a file
  * @filename: name of the file to be created
  * @text_content: text to write into the file.

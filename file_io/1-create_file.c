@@ -13,22 +13,44 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int FileDescriptor;
-	int Newtext;
+	int file_d;
+	ssize_t SizeOfText = 0;
+	ssize_t NewText = 0;
+	ssize_t BytesWritten = 0;
 
-	CHECK_NULL(filename);
+	if (filename == NULL)
+		return (0);
 
-	FileDescriptor = open(*filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
-	if (FileDescriptor == 0)
+	file_d = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+	if (file_d < 0)
 		return (0);
 
 	if (text_content != NULL)
-		Newtext == write(filename, text_content, sizeof(text_content));
-
-	if (Newtext == 0)
+	{
+		SizeOfText = _strlen(text_content);
+		while (NewText < SizeOfText)
+		{
+			BytesWritten = write(file_d, text_content + NewText, SizeOfText - NewText);
+			if (BytesWritten < 0)
+			{
+				close(file_d);
+				return (0);
+			}
+			NewText += BytesWritten;
+		}
+	}
+	else
+	{
+		/** If text_content is NULL, create an empty file */
+		if (write(file_d, "", 0) < 0)
+		{
+			close(file_d);
+			return (0);
+		}
+	}
+	if (NewText != SizeOfText)
 		return (-1);
 
-
-	close(FileDescriptor);
-	return (Newtext);
+	close(file_d);
+	return (1);
 }

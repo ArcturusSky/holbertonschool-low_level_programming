@@ -1,6 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdio.h>
+#include <fcntl.h> /** Includes definitions for file control operations */
+#include <unistd.h> /** Includes definitions for POSIX constants and types */
+#include <stdlib.h> /** Includes definitions for mem management operations */
 
 int _putchar(char c);
 	/**Fonction utilitaire servant à remplacer putchar classique */
@@ -321,30 +324,15 @@ ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
 	/** Function to create a file */
 
-static int close_file_free_buff_return_0(int file_d, char *buf, int returnval);
-	/** Function to shorten close file, free buff and return 0 */
 
-/** Part to try to lighten my code  */
+/** -------------- Part to try to lighten my code -------------- */
 
-#define BUFFER_SIZE 1024
-#define FILE_DESCRIPTOR 0
+#define BUFF_SIZE 50
 
-/**
- * close_file_free_buff_return_0 - Function to handle error
- * @file_d: file to close
- * @buf: temporary buffer to free
- * @returnval: value to return since it can vary
- *
- * Return: returnval
- */
+int close_file_free_buff(int file_descriptor, char *buf, int returnval);
+	/** Function to shorten close file, free buff and return value */
 
-static int close_file_free_buff_return_0(int file_d, char *buf, int returnval)
-{
-	close(file_d);
-	free(buf);
-	return (0);
-}
-
-
+int close_file_no_free(int file_descriptor, int returnval);
+	/** Function to shorten close file without freeing buff and return value */
 
 #endif

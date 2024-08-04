@@ -15,8 +15,10 @@
 
 int main(int argc, char *argv[])
 {
-	size_t file_from, file_to, bytes_read, bytes_written;
+	int file_from, file_to;
+	ssize_t bytes_read, bytes_written;
 	char buffer[BUFFER_SIZE];
+	char *pointer = buffer;
 
 	if (argc != 3)
 	{
@@ -24,7 +26,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	file_from = (argv[1], O_RDONLY);
+	file_from = open(argv[1], O_RDONLY);
 	if (file_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -39,10 +41,9 @@ int main(int argc, char *argv[])
 	}
 	while ((bytes_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
-
 	while (bytes_read > 0)
 	{
-		bytes_written = write(file_to, buffer, bytes_read);
+		bytes_written = write(file_to, pointer, bytes_read);
 		if (bytes_written < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
@@ -51,11 +52,11 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 		bytes_read -= bytes_written;
-		buffer += bytes_written;
+		pointer += bytes_written;
 	}
 	if (bytes_read < 0)
 	{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1])
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			close(file_from);
 			close(file_to);
 			exit(99);
@@ -73,5 +74,5 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 }
-
+return (0);
 }

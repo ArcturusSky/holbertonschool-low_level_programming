@@ -329,7 +329,7 @@ int append_text_to_file(const char *filename, char *text_content);
 
 /** -------------- Part to try to lighten my code -------------- */
 
-#define BUFF_SIZE 50
+#define BUFFER_SIZE 1024
 
 int close_file_free_buff(int file_descriptor, char *buf, int returnval);
 	/** Function to shorten close file, free buff and return value */

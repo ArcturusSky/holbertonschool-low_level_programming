@@ -340,4 +340,19 @@ int close_file_no_free(int file_descriptor, int returnval);
 unsigned int binary_to_uint(const char *b);
 	/** Function that converts a binary number to an unsigne int */
 
+void print_binary(unsigned long int n);
+	/** Function that prints a binary representation of a number */
+
+int get_bit(unsigned long int n, unsigned int index);
+	/** Function that returns the value of a bit at a given index*/
+
+int set_bit(unsigned long int *n, unsigned int index);
+	/** function that sets the value of a bit to a 1 at a given index */
+
+int clear_bit(unsigned long int *n, unsigned int index);
+	/** Function that sets the value of a bit to 0 at a given index */
+
+unsigned int flip_bits(unsigned long int n, unsigned long int m);
+	/** Function that returns the number of bits to flip */
+
 #endif

@@ -59,7 +59,7 @@ list_t *add_node(list_t **head, const char *str)
 	newNode->str = Duplicate_of_str;
 			/** Set the duplicate string into the str data in the new node  */
 	newNode->len = _strlen(Duplicate_of_str);
-			/** Set the lenght into the len data in the new node  */
+			/** Set the length into the len data in the new node  */
 	if (*head == NULL)
 			/** Case 1: empty list */
 	{

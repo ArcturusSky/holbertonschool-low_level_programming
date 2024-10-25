@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * _strlen - Function to count a string lenght
+ * _strlen - Function to count a string length
  * @s: string to count
  * Return: lengh
  */
@@ -59,7 +59,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		newNode->str = Duplicate_string;
 		/** Set the duplicate string into the str data in the new node  */
 		newNode->len = _strlen(Duplicate_string);
-		/** Set the lenght into the len data in the new node  */
+		/** Set the length into the len data in the new node  */
 		newNode->next = NULL; /** since adding at the end, next node is NULL */
 	}
 	if (*head == NULL) /** Case 1: empty list */
